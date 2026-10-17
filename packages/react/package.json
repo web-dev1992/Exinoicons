@@ -38,7 +38,7 @@
     "build": "pnpm clean && pnpm typecheck && pnpm build:bundles",
     "build:bundles": "rollup -c ./rollup.config.mjs",
     "typecheck": "tsc",
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "publish:beta": "pnpm build && npm publish --tag beta --no-git-checks",
     "publish:prod": "pnpm build && npm publish --no-git-checks"
   },

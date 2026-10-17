@@ -21,5 +21,8 @@
     "docs:dev": "pnpm --filter @exinoicons/docs dev",
     "docs:build": "pnpm --filter @exinoicons/docs build",
     "docs:preview": "pnpm --filter @exinoicons/docs preview"
+  },
+  "devDependencies": {
+    "rimraf": "^6.1.3"
   }
 }

@@ -27,7 +27,7 @@
   "author": "Exinoicons",
   "scripts": {
     "build": "pnpm clean && ng-packagr -p ng-package.json",
-    "clean": "rm -rf dist",
+    "clean": "rimraf dist",
     "test": "ng test",
     "publish:beta": "pnpm build && npm publish --tag beta --no-git-checks",
     "publish:prod": "pnpm build && npm publish --no-git-checks"
