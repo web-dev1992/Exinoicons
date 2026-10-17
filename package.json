@@ -1,7 +1,6 @@
 {
   "name": "exinoicons",
   "version": "0.0.0",
-  "private": true,
   "description": "Official exinoicons libraries for React, Vue, Svelte, Angular, React Native, Flutter, and more.",
   "homepage": "https://exinoicons.com",
   "repository": {
