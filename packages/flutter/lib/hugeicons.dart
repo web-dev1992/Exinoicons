@@ -1,4 +1,4 @@
-library hugeicons;
+library exinoicons;
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -6,7 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'styles/stroke_rounded.dart';
 
-/// Free Hugeicons (stroke-rounded only) generated as full bundle.
+/// Free Exinoicons (stroke-rounded only) generated as full bundle.
 class HugeIcons {
   HugeIcons._();
 
@@ -5420,8 +5420,8 @@ class HugeIcons {
       HugeIconsStrokeRounded.strokeRoundedHtmlFile01;
   static const List<List<dynamic>> strokeRoundedHtmlFile02 =
       HugeIconsStrokeRounded.strokeRoundedHtmlFile02;
-  static const List<List<dynamic>> strokeRoundedHugeicons =
-      HugeIconsStrokeRounded.strokeRoundedHugeicons;
+  static const List<List<dynamic>> strokeRoundedExinoicons =
+      HugeIconsStrokeRounded.strokeRoundedExinoicons;
   static const List<List<dynamic>> strokeRoundedHumidity =
       HugeIconsStrokeRounded.strokeRoundedHumidity;
   static const List<List<dynamic>> strokeRoundedHut =

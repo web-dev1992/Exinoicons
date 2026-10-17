@@ -1,2 +1,6 @@
-export { default as HugeiconsIcon } from './HugeiconsIcon';
-export type { HugeiconsIconProps, HugeiconsProps, IconSvgElement } from './HugeiconsIcon';
+export { default as ExinoiconsIcon } from "./ExinoiconsIcon";
+export type {
+  ExinoiconsIconProps,
+  ExinoiconsProps,
+  IconSvgElement,
+} from "./ExinoiconsIcon";

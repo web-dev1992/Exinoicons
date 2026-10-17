@@ -1,7 +1,8 @@
-# Hugeicons Icon List (JS frameworks)
+# Exinoicons Icon List (JS frameworks)
+
 Total icons: 5471
 
-Source: `@hugeicons/core-free-icons@4.2.1`. Generated — do not edit by hand.
+Source: `@exinoicons/core-free-icons@4.2.1`. Generated — do not edit by hand.
 
 - `AArrowDownIcon`
 - `AArrowUpIcon`
@@ -2631,7 +2632,7 @@ Source: `@hugeicons/core-free-icons@4.2.1`. Generated — do not edit by hand.
 - `HtmlFile01Icon`
 - `HtmlFile02Icon`
 - `HtmlFiveIcon`
-- `HugeiconsIcon`
+- `ExinoiconsIcon`
 - `HumidityIcon`
 - `HutIcon`
 - `HydroPowerIcon`

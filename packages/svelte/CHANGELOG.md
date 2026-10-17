@@ -1,5 +1,4 @@
-# @hugeicons/svelte
-
+# @exinoicons/svelte
 
 ## 1.1.2
 
@@ -35,7 +34,7 @@
 - Added "How It Works" section explaining the rendering library concept
 - Standardized documentation structure across all framework packages
 - Updated icon counts to 4,600+ free / 46,000+ pro
-- Updated docs URL to hugeicons.com/docs
+- Updated docs URL to exinoicons.com/docs
 
 ## 1.0.0
 

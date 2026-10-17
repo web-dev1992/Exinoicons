@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-    import type { IconSvgElement, HugeiconsProps } from '../create-hugeicon-singleton';
-    import { createHugeiconSingleton } from '../create-hugeicon-singleton';
+    import type { IconSvgElement, ExinoiconsProps } from '../create-Exinoicon-singleton';
+    import { createExinoiconSingleton } from '../create-Exinoicon-singleton';
     import type { SVGAttributes } from 'svelte/elements';
 
     interface Props extends SVGAttributes<SVGSVGElement> {
@@ -36,8 +36,8 @@
     const finalClassName = $derived(className || legacyClassName);
 
     let svgElement: SVGSVGElement;
-    let hugeiconAction = $state<ReturnType<typeof createHugeiconSingleton>>();
-    let cleanup = $state<{ update: (props: HugeiconsProps) => void; destroy: () => void }>();
+    let ExinoiconAction = $state<ReturnType<typeof createExinoiconSingleton>>();
+    let cleanup = $state<{ update: (props: ExinoiconsProps) => void; destroy: () => void }>();
 
     const propsForUpdate = $derived({
         size,
@@ -52,8 +52,8 @@
     onMount(() => {
         if (!svgElement) return;
         
-        hugeiconAction = createHugeiconSingleton('HugeiconsIcon', icon);
-        cleanup = hugeiconAction.render(svgElement, propsForUpdate);
+        ExinoiconAction = createExinoiconSingleton('ExinoiconsIcon', icon);
+        cleanup = ExinoiconAction.render(svgElement, propsForUpdate);
 
         return () => {
             cleanup?.destroy();
@@ -61,7 +61,7 @@
     });
 
     $effect(() => {
-        if (hugeiconAction && svgElement && cleanup) {
+        if (ExinoiconAction && svgElement && cleanup) {
             cleanup.update(propsForUpdate);
         }
     });

@@ -1,8 +1,8 @@
 {
-  "name": "@hugeicons/vue",
+  "name": "@exinoicons/vue",
   "version": "1.0.7",
-  "description": "Hugeicons Vue Component Library https://hugeicons.com",
-  "homepage": "https://hugeicons.com",
+  "description": "Exinoicons Vue Component Library https://exinoicons.com",
+  "homepage": "https://exinoicons.com",
   "license": "MIT",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -18,11 +18,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugeicons/hugeicons.git",
+    "url": "https://github.com/exinoicons/exinoicons.git",
     "directory": "packages/vue"
   },
   "bugs": {
-    "url": "https://github.com/hugeicons/hugeicons/issues"
+    "url": "https://github.com/exinoicons/exinoicons/issues"
   },
   "exports": {
     ".": {
@@ -31,7 +31,7 @@
       "require": "./dist/cjs/index.js"
     }
   },
-  "author": "Hugeicons",
+  "author": "Exinoicons",
   "scripts": {
     "build": "pnpm clean && pnpm typecheck && pnpm build:bundles",
     "build:bundles": "rollup -c ./rollup.config.mjs",
@@ -60,7 +60,7 @@
     "vue": "^2.6.0 || ^3.0.0"
   },
   "keywords": [
-    "hugeicons",
+    "exinoicons",
     "vue",
     "icons",
     "vue-icons",

@@ -103,7 +103,7 @@ async function main() {
 
     if (root.attributes?.viewBox !== "0 0 24 24") {
       throw new Error(
-        `${file} must have viewBox="0 0 24 24" to match Hugeicons defaults.`,
+        `${file} must have viewBox="0 0 24 24" to match Exinoicons defaults.`,
       );
     }
 

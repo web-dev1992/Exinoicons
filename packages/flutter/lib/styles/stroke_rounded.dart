@@ -1,11 +1,11 @@
-library hugeicons_strokerounded;
+library exinoicons_strokerounded;
 
 /// StrokeRounded style icons for HugeIcons (Free).
 ///
 /// This library contains all icons in the strokeRounded style using efficient JSON structure.
 /// Import this file to access strokeRounded icons with tree-shaking support.
 ///
-/// GENERATED FILE — do not edit by hand. Run `pnpm generate:flutter` in hugeicons/core.
+/// GENERATED FILE — do not edit by hand. Run `pnpm generate:flutter` in exinoicons/core.
 class HugeIconsStrokeRounded {
   const HugeIconsStrokeRounded();
 
@@ -114874,8 +114874,8 @@ class HugeIconsStrokeRounded {
     ],
   ];
 
-  /// JSON structure for the 'strokeRoundedHugeicons' icon.
-  static const List<List<dynamic>> strokeRoundedHugeicons = [
+  /// JSON structure for the 'strokeRoundedExinoicons' icon.
+  static const List<List<dynamic>> strokeRoundedExinoicons = [
     [
       'path',
       {
@@ -263264,8 +263264,8 @@ class HugeIconsStrokeRounded {
   /// Alias for 'strokeRoundedHtmlFile02' icon.
   static const List<List<dynamic>> htmlFile02 = strokeRoundedHtmlFile02;
 
-  /// Alias for 'strokeRoundedHugeicons' icon.
-  static const List<List<dynamic>> hugeicons = strokeRoundedHugeicons;
+  /// Alias for 'strokeRoundedExinoicons' icon.
+  static const List<List<dynamic>> exinoicons = strokeRoundedExinoicons;
 
   /// Alias for 'strokeRoundedHumidity' icon.
   static const List<List<dynamic>> humidity = strokeRoundedHumidity;

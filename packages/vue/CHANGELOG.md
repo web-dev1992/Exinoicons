@@ -1,12 +1,10 @@
-# @hugeicons/vue
-
+# @exinoicons/vue
 
 ## 1.0.5
 
 ### Patch Changes
 
 - Updated icon counts to 5,100+ free / 51,000+ pro
-
 
 ## 1.0.4
 
@@ -15,9 +13,8 @@
 - Added "How It Works" section explaining the rendering library concept
 - Standardized documentation structure across all framework packages
 - Updated icon counts to 4,600+ free / 46,000+ pro
-- Updated docs URL to hugeicons.com/docs
+- Updated docs URL to exinoicons.com/docs
 - Updated to use single image source from React repository
-
 
 ## 1.0.0
 

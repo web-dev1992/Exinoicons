@@ -1,5 +1,4 @@
-# @hugeicons/react-native
-
+# @exinoicons/react-native
 
 ## 1.0.13
 
@@ -18,7 +17,7 @@
 ### Patch Changes
 
 - Fixed TypeScript autocomplete for component props in IDEs
-- Improved component type definition from `any` to `HugeiconsIconComponent`
+- Improved component type definition from `any` to `ExinoiconsIconComponent`
 - Enhanced type exports for better TypeScript IntelliSense support
 - Added proper type annotations to forwardRef implementation
 - Improved rollup configuration for better type preservation
@@ -30,7 +29,7 @@
 - Added "How It Works" section explaining the rendering library concept
 - Standardized documentation structure across all framework packages
 - Updated icon counts to 5,100+ free / 51,000+ pro
-- Updated docs URL to hugeicons.com/docs
+- Updated docs URL to exinoicons.com/docs
 - Added LICENSE.md, PRO-LICENSE.md, and CHANGELOG.md files
 - Updated to use single image source from React repository
 

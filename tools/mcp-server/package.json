@@ -1,17 +1,17 @@
 {
-  "name": "@hugeicons/mcp-server",
+  "name": "@exinoicons/mcp-server",
   "version": "0.2.2",
-  "description": "MCP server for Hugeicons search and usage documentation",
+  "description": "MCP server for Exinoicons search and usage documentation",
   "type": "module",
   "bin": {
-    "hugeicons-mcp": "build/index.js"
+    "exinoicons-mcp": "build/index.js"
   },
   "files": [
     "build",
     "README.md"
   ],
   "scripts": {
-    "build": "tsc && chmod +x build/index.js",
+    "build": "tsc",
     "prepare": "npm run build",
     "watch": "tsc --watch",
     "inspector": "npx @modelcontextprotocol/inspector build/index.js"
@@ -27,7 +27,7 @@
     "typescript": "^5.3.3"
   },
   "keywords": [
-    "hugeicons",
+    "exinoicons",
     "mcp",
     "icons",
     "model-context-protocol",
@@ -38,12 +38,12 @@
     "claude",
     "ai-tools"
   ],
-  "author": "Hugeicons",
-  "homepage": "https://hugeicons.com",
+  "author": "Exinoicons",
+  "homepage": "https://exinoicons.com",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugeicons/hugeicons.git",
+    "url": "https://github.com/exinoicons/exinoicons.git",
     "directory": "tools/mcp-server"
   }
 }

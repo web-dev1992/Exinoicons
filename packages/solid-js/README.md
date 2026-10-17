@@ -1,21 +1,22 @@
-![Hugeicons Logo](https://raw.githubusercontent.com/hugeicons/hugeicons/main/assets/logo.png)
+![Exinoicons Logo](https://raw.githubusercontent.com/exinoicons/exinoicons/main/assets/logo.png)
 
-# @hugeicons/solid-js
+# @exinoicons/solid-js
 
-> A fast, customizable, tree-shakeable SolidJS icon renderer for Hugeicons. Use `HugeiconsIcon` with `@hugeicons/core-free-icons` or `@hugeicons-pro/core-*` to render SVG icons in SolidJS (TypeScript-ready).
+> A fast, customizable, tree-shakeable SolidJS icon renderer for Exinoicons. Use `ExinoiconsIcon` with `@exinoicons/core-free-icons` or `@exinoicons-pro/core-*` to render SVG icons in SolidJS (TypeScript-ready).
 
-## What is Hugeicons?
+## What is Exinoicons?
 
-Hugeicons is a beautiful [icon library](https://hugeicons.com/icons) for modern web and mobile apps. The free package includes 6,000+ Stroke Rounded SolidJS icons. The Pro package provides 60,000+ SolidJS icons across 10 styles, including multicolor support for Bulk, Duotone, and Twotone styles.
+Exinoicons is a beautiful [icon library](https://exinoicons.com/icons) for modern web and mobile apps. The free package includes 6,000+ Stroke Rounded SolidJS icons. The Pro package provides 60,000+ SolidJS icons across 10 styles, including multicolor support for Bulk, Duotone, and Twotone styles.
 
 ## How It Works
 
-This package (`@hugeicons/solid-js`) is a **rendering library** - it provides the `HugeiconsIcon` component that displays icons in your SolidJS app. The icons themselves come from separate icon packages:
+This package (`@exinoicons/solid-js`) is a **rendering library** - it provides the `ExinoiconsIcon` component that displays icons in your SolidJS app. The icons themselves come from separate icon packages:
 
-- **Free icons**: `@hugeicons/core-free-icons` (6,000+ icons)
-- **Pro icons**: `@hugeicons-pro/core-*` packages (60,000+ icons, requires license)
+- **Free icons**: `@exinoicons/core-free-icons` (6,000+ icons)
+- **Pro icons**: `@exinoicons-pro/core-*` packages (60,000+ icons, requires license)
 
 ### Key Highlights
+
 - **6,000+ Free Icons**: Stroke Rounded set for unlimited personal and commercial projects
 - **60,000+ Pro Icons, 10 Styles**: Stroke, Solid, Bulk, Duotone, and Twotone families for sharp, rounded, and standard needs with richer variants
 - **Pixel Perfect Grid**: Built on a 24x24 grid for crisp rendering at any size
@@ -24,13 +25,13 @@ This package (`@hugeicons/solid-js`) is a **rendering library** - it provides th
 - **Tree Shaking Ready**: Named exports keep bundles lean in modern bundlers
 - **Regular Updates**: New icons added regularly to keep up with evolving design trends
 
+> **Looking for Pro Icons?** Check out our docs at [exinoicons.com/docs](https://exinoicons.com/docs) for detailed information about pro icons, styles, and advanced usage.
 
-> **Looking for Pro Icons?** Check out our docs at [hugeicons.com/docs](https://hugeicons.com/docs) for detailed information about pro icons, styles, and advanced usage.
-
-![Hugeicons Icons](https://raw.githubusercontent.com/hugeicons/hugeicons/main/assets/banner.png)
+![Exinoicons Icons](https://raw.githubusercontent.com/exinoicons/exinoicons/main/assets/banner.png)
 
 ## Table of Contents
-- [What is Hugeicons?](#what-is-hugeicons)
+
+- [What is Exinoicons?](#what-is-exinoicons)
 - [How It Works](#how-it-works)
 - [Features](#features)
 - [Installation](#installation)
@@ -61,27 +62,27 @@ This package (`@hugeicons/solid-js`) is a **rendering library** - it provides th
 
 ```bash
 # Using npm
-npm install @hugeicons/solid-js @hugeicons/core-free-icons
+npm install @exinoicons/solid-js @exinoicons/core-free-icons
 
 # Using yarn
-yarn add @hugeicons/solid-js @hugeicons/core-free-icons
+yarn add @exinoicons/solid-js @exinoicons/core-free-icons
 
 # Using pnpm
-pnpm add @hugeicons/solid-js @hugeicons/core-free-icons
+pnpm add @exinoicons/solid-js @exinoicons/core-free-icons
 
 # Using bun
-bun add @hugeicons/solid-js @hugeicons/core-free-icons
+bun add @exinoicons/solid-js @exinoicons/core-free-icons
 ```
 
 ## Usage
 
 ```jsx
-import { HugeiconsIcon } from '@hugeicons/solid-js';
-import { SearchIcon } from '@hugeicons/core-free-icons';
+import { ExinoiconsIcon } from "@exinoicons/solid-js";
+import { SearchIcon } from "@exinoicons/core-free-icons";
 
 function App() {
   return (
-    <HugeiconsIcon
+    <ExinoiconsIcon
       icon={SearchIcon}
       size={24}
       color="currentColor"
@@ -93,45 +94,43 @@ function App() {
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `icon` | `IconSvgElement` | Required | The main icon to display |
-| `altIcon` | `IconSvgElement` | - | Alternative icon for states, interactions, or dynamic icon swapping |
-| `showAlt` | `boolean` | `false` | When true, displays the altIcon instead of the main icon |
-| `size` | `number \| string` | `24` | Icon size in pixels |
-| `color` | `string` | `currentColor` | Icon color (CSS color value) |
-| `strokeWidth` | `number` | `1.5` | Width of the icon strokes |
-| `absoluteStrokeWidth` | `boolean` | `false` | When true, the stroke width will be scaled relative to the icon size |
-| `primaryColor` | `string` | - | Primary color for multicolor icons (Bulk, Duotone, Twotone styles) |
-| `secondaryColor` | `string` | - | Secondary color for multicolor icons (Bulk, Duotone, Twotone styles) |
-| `disableSecondaryOpacity` | `boolean` | `false` | Disables the default opacity applied to the secondary color |
-| `class` | `string` | - | Additional CSS classes |
+| Prop                      | Type               | Default        | Description                                                          |
+| ------------------------- | ------------------ | -------------- | -------------------------------------------------------------------- |
+| `icon`                    | `IconSvgElement`   | Required       | The main icon to display                                             |
+| `altIcon`                 | `IconSvgElement`   | -              | Alternative icon for states, interactions, or dynamic icon swapping  |
+| `showAlt`                 | `boolean`          | `false`        | When true, displays the altIcon instead of the main icon             |
+| `size`                    | `number \| string` | `24`           | Icon size in pixels                                                  |
+| `color`                   | `string`           | `currentColor` | Icon color (CSS color value)                                         |
+| `strokeWidth`             | `number`           | `1.5`          | Width of the icon strokes                                            |
+| `absoluteStrokeWidth`     | `boolean`          | `false`        | When true, the stroke width will be scaled relative to the icon size |
+| `primaryColor`            | `string`           | -              | Primary color for multicolor icons (Bulk, Duotone, Twotone styles)   |
+| `secondaryColor`          | `string`           | -              | Secondary color for multicolor icons (Bulk, Duotone, Twotone styles) |
+| `disableSecondaryOpacity` | `boolean`          | `false`        | Disables the default opacity applied to the secondary color          |
+| `class`                   | `string`           | -              | Additional CSS classes                                               |
 
 ## Examples
 
 ### Basic Usage
-```jsx
-import { HugeiconsIcon } from '@hugeicons/solid-js';
-import { SearchIcon } from '@hugeicons/core-free-icons';
 
-<HugeiconsIcon icon={SearchIcon} />
+```jsx
+import { ExinoiconsIcon } from "@exinoicons/solid-js";
+import { SearchIcon } from "@exinoicons/core-free-icons";
+
+<ExinoiconsIcon icon={SearchIcon} />;
 ```
 
 ### Custom Size and Color
-```jsx
-import { NotificationIcon } from '@hugeicons/core-free-icons';
 
-<HugeiconsIcon
-  icon={NotificationIcon}
-  size={32}
-  color="#FF5733"
-/>
+```jsx
+import { NotificationIcon } from "@exinoicons/core-free-icons";
+
+<ExinoiconsIcon icon={NotificationIcon} size={32} color="#FF5733" />;
 ```
 
 ### More examples and patterns
 
-- Examples: https://hugeicons.com/docs/integrations/solid-js/examples
-- Best practices: https://hugeicons.com/docs/integrations/solid-js/best-practices
+- Examples: https://exinoicons.com/docs/integrations/solid-js/examples
+- Best practices: https://exinoicons.com/docs/integrations/solid-js/best-practices
 
 ## Performance
 
@@ -144,7 +143,7 @@ import { NotificationIcon } from '@hugeicons/core-free-icons';
 ### Common Issues
 
 1. **Icons not showing up?**
-   - Make sure you've installed both `@hugeicons/solid-js` and `@hugeicons/core-free-icons`
+   - Make sure you've installed both `@exinoicons/solid-js` and `@exinoicons/core-free-icons`
    - Check that the icon names are correctly imported
 
 2. **TypeScript errors?**
@@ -162,44 +161,46 @@ The library supports all modern browsers.
 
 ## Related Packages
 
-- [@hugeicons/react](https://www.npmjs.com/package/@hugeicons/react) - React component
-- [@hugeicons/vue](https://www.npmjs.com/package/@hugeicons/vue) - Vue component
-- [@hugeicons/angular](https://www.npmjs.com/package/@hugeicons/angular) - Angular component
-- [@hugeicons/svelte](https://www.npmjs.com/package/@hugeicons/svelte) - Svelte component
-- [@hugeicons/react-native](https://www.npmjs.com/package/@hugeicons/react-native) - React Native component
+- [@exinoicons/react](https://www.npmjs.com/package/@exinoicons/react) - React component
+- [@exinoicons/vue](https://www.npmjs.com/package/@exinoicons/vue) - Vue component
+- [@exinoicons/angular](https://www.npmjs.com/package/@exinoicons/angular) - Angular component
+- [@exinoicons/svelte](https://www.npmjs.com/package/@exinoicons/svelte) - Svelte component
+- [@exinoicons/react-native](https://www.npmjs.com/package/@exinoicons/react-native) - React Native component
 
 ## Pro Version
 
 > **Want access to 60,000+ icons and 10 unique styles?**
-> Check out our [Pro Version](https://hugeicons.com/pricing) and visit our [docs](https://hugeicons.com/docs) for detailed documentation.
+> Check out our [Pro Version](https://exinoicons.com/pricing) and visit our [docs](https://exinoicons.com/docs) for detailed documentation.
 
 ### Available Pro Styles
+
 - **Stroke Styles**
-  - Stroke Rounded (`@hugeicons-pro/core-stroke-rounded`)
-  - Stroke Sharp (`@hugeicons-pro/core-stroke-sharp`)
-  - Stroke Standard (`@hugeicons-pro/core-stroke-standard`)
+  - Stroke Rounded (`@exinoicons-pro/core-stroke-rounded`)
+  - Stroke Sharp (`@exinoicons-pro/core-stroke-sharp`)
+  - Stroke Standard (`@exinoicons-pro/core-stroke-standard`)
 - **Solid Styles**
-  - Solid Rounded (`@hugeicons-pro/core-solid-rounded`)
-  - Solid Sharp (`@hugeicons-pro/core-solid-sharp`)
-  - Solid Standard (`@hugeicons-pro/core-solid-standard`)
+  - Solid Rounded (`@exinoicons-pro/core-solid-rounded`)
+  - Solid Sharp (`@exinoicons-pro/core-solid-sharp`)
+  - Solid Standard (`@exinoicons-pro/core-solid-standard`)
 - **Special Styles**
-  - Bulk Rounded (`@hugeicons-pro/core-bulk-rounded`)
-  - Duotone Rounded (`@hugeicons-pro/core-duotone-rounded`)
-  - Duotone Standard (`@hugeicons-pro/core-duotone-standard`)
-  - Twotone Rounded (`@hugeicons-pro/core-twotone-rounded`)
+  - Bulk Rounded (`@exinoicons-pro/core-bulk-rounded`)
+  - Duotone Rounded (`@exinoicons-pro/core-duotone-rounded`)
+  - Duotone Standard (`@exinoicons-pro/core-duotone-standard`)
+  - Twotone Rounded (`@exinoicons-pro/core-twotone-rounded`)
 
 ## License
 
-The code in this package (`@hugeicons/solid-js`) is licensed under the MIT License.
+The code in this package (`@exinoicons/solid-js`) is licensed under the MIT License.
 
-This package only provides rendering utilities. It does not include or grant any rights to Hugeicons icon assets. Using Pro icon styles requires a valid Hugeicons Pro license.
+This package only provides rendering utilities. It does not include or grant any rights to Exinoicons icon assets. Using Pro icon styles requires a valid Exinoicons Pro license.
 
-Hugeicons icon packs are licensed separately:
-- **Free icon packs** (`@hugeicons/core-free-icons`): MIT License. The `LICENSE.md` ships in the package.
-- **Pro icon packs (`@hugeicons-pro/*`)**: require a paid Hugeicons Pro license and are governed by the [Hugeicons License Agreement](https://hugeicons.com/license-agreement) (summary in the package's `PRO-LICENSE.md`).
+Exinoicons icon packs are licensed separately:
+
+- **Free icon packs** (`@exinoicons/core-free-icons`): MIT License. The `LICENSE.md` ships in the package.
+- **Pro icon packs (`@exinoicons-pro/*`)**: require a paid Exinoicons Pro license and are governed by the [Exinoicons License Agreement](https://exinoicons.com/license-agreement) (summary in the package's `PRO-LICENSE.md`).
 
 ## Related
 
 - [Changelog](CHANGELOG.md) - Version history and release notes
-- [@hugeicons/core-free-icons](https://www.npmjs.com/package/@hugeicons/core-free-icons) - Free icon package
-- [Hugeicons Website](https://hugeicons.com) - Browse all available icons
+- [@exinoicons/core-free-icons](https://www.npmjs.com/package/@exinoicons/core-free-icons) - Free icon package
+- [Exinoicons Website](https://exinoicons.com) - Browse all available icons

@@ -5,7 +5,7 @@ import {
   input,
 } from "@angular/core";
 import { IconSvgObject } from "../lib/types";
-import { HugeiconsSvgChildrenDirective } from "./svg-children.directive";
+import { ExinoiconsSvgChildrenDirective } from "./svg-children.directive";
 
 /**
  * One SVG child of an icon: the icon data's props (React-style camelCase names)
@@ -30,9 +30,9 @@ interface PathData {
 const LEGACY_FILL_NONE_TAGS = new Set(["path", "circle", "ellipse", "rect"]);
 
 @Component({
-  selector: "hugeicons-icon",
+  selector: "exinoicons-icon",
   standalone: true,
-  imports: [HugeiconsSvgChildrenDirective],
+  imports: [ExinoiconsSvgChildrenDirective],
   template: `
     <svg
       [attr.width]="resolvedSize()"
@@ -44,7 +44,7 @@ const LEGACY_FILL_NONE_TAGS = new Set(["path", "circle", "ellipse", "rect"]);
       [attr.stroke-width]="strokeOverride()?.strokeWidth"
       [class]="iconClass()"
       xmlns="http://www.w3.org/2000/svg"
-      [hugeiconsSvgChildren]="paths()"
+      [exinoiconsSvgChildren]="paths()"
     ></svg>
   `,
   host: {
@@ -53,7 +53,7 @@ const LEGACY_FILL_NONE_TAGS = new Set(["path", "circle", "ellipse", "rect"]);
   },
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HugeiconsIconComponent {
+export class ExinoiconsIconComponent {
   // Signal inputs - modern Angular 17.1+ approach
   readonly size = input<string | number>(24);
   readonly strokeWidth = input<number | undefined>(undefined);
@@ -99,7 +99,7 @@ export class HugeiconsIconComponent {
     const secondaryColor = this.secondaryColor();
     const disableSecondaryOpacity = this.disableSecondaryOpacity();
 
-    // Same ordering as @hugeicons/react: secondary (opacity) layers first
+    // Same ordering as @exinoicons/react: secondary (opacity) layers first
     return [...currentIcon]
       .sort(([, a], [, b]) => {
         const hasOpacityA = a["opacity"] !== undefined;

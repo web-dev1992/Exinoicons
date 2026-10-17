@@ -1,5 +1,5 @@
-import { HugeiconsIcon } from '@hugeicons/react';
-import type { IconEntry } from '../lib/icons';
+import { ExinoiconsIcon } from "@exinoicons/react";
+import type { IconEntry } from "../lib/icons";
 
 interface IconCardProps {
   entry: IconEntry;
@@ -16,7 +16,7 @@ export function IconCard({ entry, onCopy }: IconCardProps) {
         aria-label={`Copy import for ${entry.name}`}
         title="Copy import statement"
       >
-        <HugeiconsIcon icon={entry.icon} size={28} strokeWidth={1.5} />
+        <ExinoiconsIcon icon={entry.icon} size={28} strokeWidth={1.5} />
       </button>
 
       <button

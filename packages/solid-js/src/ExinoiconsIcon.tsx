@@ -1,23 +1,26 @@
-import { splitProps, createMemo, For, Component } from 'solid-js';
-import { Dynamic } from 'solid-js/web';
-import type { JSX } from 'solid-js';
-import { toSvgAttributes } from './svg-attributes';
+import { splitProps, createMemo, For, Component } from "solid-js";
+import { Dynamic } from "solid-js/web";
+import type { JSX } from "solid-js";
+import { toSvgAttributes } from "./svg-attributes";
 
 const defaultAttributes = {
-  xmlns: 'http://www.w3.org/2000/svg',
+  xmlns: "http://www.w3.org/2000/svg",
   width: 24,
   height: 24,
-  viewBox: '0 0 24 24',
-  fill: 'none',
+  viewBox: "0 0 24 24",
+  fill: "none",
 };
 
-export type IconSvgElement = readonly (readonly [string, { readonly [key: string]: string | number }])[];
+export type IconSvgElement = readonly (readonly [
+  string,
+  { readonly [key: string]: string | number },
+])[];
 
 export type SVGAttributes = Partial<JSX.SvgSVGAttributes<SVGSVGElement>>;
 
 type ComponentAttributes = SVGAttributes;
 
-export interface HugeiconsProps extends ComponentAttributes {
+export interface ExinoiconsProps extends ComponentAttributes {
   size?: string | number;
   strokeWidth?: number;
   absoluteStrokeWidth?: boolean;
@@ -30,24 +33,24 @@ export interface HugeiconsProps extends ComponentAttributes {
   disableSecondaryOpacity?: boolean;
 }
 
-export interface HugeiconsIconProps extends Omit<HugeiconsProps, 'altIcon'> {
+export interface ExinoiconsIconProps extends Omit<ExinoiconsProps, "altIcon"> {
   icon: IconSvgElement;
   altIcon?: IconSvgElement;
 }
 
-export const HugeiconsIcon: Component<HugeiconsIconProps> = (props) => {
+export const ExinoiconsIcon: Component<ExinoiconsIconProps> = (props) => {
   const [local, rest] = splitProps(props, [
-    'icon',
-    'size',
-    'color',
-    'strokeWidth',
-    'absoluteStrokeWidth',
-    'class',
-    'altIcon',
-    'showAlt',
-    'primaryColor',
-    'secondaryColor',
-    'disableSecondaryOpacity'
+    "icon",
+    "size",
+    "color",
+    "strokeWidth",
+    "absoluteStrokeWidth",
+    "class",
+    "altIcon",
+    "showAlt",
+    "primaryColor",
+    "secondaryColor",
+    "disableSecondaryOpacity",
   ]);
 
   const calculatedStrokeWidth = createMemo(() => {
@@ -58,7 +61,7 @@ export const HugeiconsIcon: Component<HugeiconsIconProps> = (props) => {
   });
 
   const currentIcon = createMemo(() =>
-    local.showAlt && local.altIcon ? local.altIcon : local.icon
+    local.showAlt && local.altIcon ? local.altIcon : local.icon,
   );
 
   const sortedChildren = createMemo(() =>
@@ -66,11 +69,11 @@ export const HugeiconsIcon: Component<HugeiconsIconProps> = (props) => {
       const hasOpacityA = a.opacity !== undefined;
       const hasOpacityB = b.opacity !== undefined;
       return hasOpacityB ? 1 : hasOpacityA ? -1 : 0;
-    })
+    }),
   );
 
-  const finalColor = createMemo(() =>
-    local.primaryColor || local.color || 'currentColor'
+  const finalColor = createMemo(
+    () => local.primaryColor || local.color || "currentColor",
   );
 
   return (
@@ -79,7 +82,9 @@ export const HugeiconsIcon: Component<HugeiconsIconProps> = (props) => {
       width={local.size ?? 24}
       height={local.size ?? 24}
       color={finalColor()}
-      stroke={calculatedStrokeWidth() !== undefined ? 'currentColor' : undefined}
+      stroke={
+        calculatedStrokeWidth() !== undefined ? "currentColor" : undefined
+      }
       stroke-width={calculatedStrokeWidth()}
       class={local.class}
       {...rest}
@@ -88,19 +93,26 @@ export const HugeiconsIcon: Component<HugeiconsIconProps> = (props) => {
         {([tag, iconAttrs]) => {
           // stroke, stroke-width, fill and opacity are set below; Solid's prop merging skips
           // undefined values, so leaving them in the spread would keep a value we mean to clear.
-          const { stroke, 'stroke-width': strokeWidth, fill, opacity, ...otherAttrs } =
-            toSvgAttributes(iconAttrs);
+          const {
+            stroke,
+            "stroke-width": strokeWidth,
+            fill,
+            opacity,
+            ...otherAttrs
+          } = toSvgAttributes(iconAttrs);
           const isSecondaryPath = opacity !== undefined;
 
           const getOpacity = () =>
-            isSecondaryPath && local.disableSecondaryOpacity ? undefined : opacity;
+            isSecondaryPath && local.disableSecondaryOpacity
+              ? undefined
+              : opacity;
 
           const getStroke = () => {
             if (local.secondaryColor && stroke !== undefined) {
               return isSecondaryPath ? local.secondaryColor : finalColor();
             }
             if (calculatedStrokeWidth() !== undefined) {
-              return 'currentColor';
+              return "currentColor";
             }
             return stroke;
           };
@@ -130,4 +142,4 @@ export const HugeiconsIcon: Component<HugeiconsIconProps> = (props) => {
   );
 };
 
-export default HugeiconsIcon;
+export default ExinoiconsIcon;

@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
  *
  * @since 1.0.0
  */
-class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
+class Exinoicons_Icon_Button_Widget extends \Elementor\Widget_Base
 {
 
     /**
@@ -22,7 +22,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
      */
     public function get_name()
     {
-        return 'hugeicons-icon-button';
+        return 'exinoicons-icon-button';
     }
 
     /**
@@ -34,7 +34,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Icon Button', 'hugeicons-pro');
+        return esc_html__('Icon Button', 'exinoicons-pro');
     }
 
     /**
@@ -58,7 +58,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
      */
     public function get_custom_help_url()
     {
-        return 'https://hugeicons.com/docs/widgets/icon-button';
+        return 'https://exinoicons.com/docs/widgets/icon-button';
     }
 
     /**
@@ -70,7 +70,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
      */
     public function get_categories()
     {
-        return ['hugeicons-icons'];
+        return ['exinoicons-icons'];
     }
 
     /**
@@ -82,7 +82,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
      */
     public function get_keywords()
     {
-        return ['button', 'icon', 'hugeicons', 'link', 'cta'];
+        return ['button', 'icon', 'exinoicons', 'link', 'cta'];
     }
 
     /**
@@ -97,7 +97,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__('Button', 'hugeicons-pro'),
+                'label' => esc_html__('Button', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -105,17 +105,17 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'button_text',
             [
-                'label' => esc_html__('Text', 'hugeicons-pro'),
+                'label' => esc_html__('Text', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__('Click Here', 'hugeicons-pro'),
-                'placeholder' => esc_html__('Enter button text', 'hugeicons-pro'),
+                'default' => esc_html__('Click Here', 'exinoicons-pro'),
+                'placeholder' => esc_html__('Enter button text', 'exinoicons-pro'),
             ]
         );
 
         $this->add_control(
             'button_link',
             [
-                'label' => esc_html__('Link', 'hugeicons-pro'),
+                'label' => esc_html__('Link', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::URL,
                 'options' => ['url', 'is_external', 'nofollow'],
                 'default' => [
@@ -130,8 +130,8 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'icon',
             [
-                'label' => esc_html__('Icon', 'hugeicons-pro'),
-                'type' => 'hugeicons-icon-browse',
+                'label' => esc_html__('Icon', 'exinoicons-pro'),
+                'type' => 'exinoicons-icon-browse',
                 'default' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.00005 6C9.00005 6 15 10.4189 15 12C15 13.5812 9 18 9 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>',
@@ -141,15 +141,15 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'icon_position',
             [
-                'label' => esc_html__('Icon Position', 'hugeicons-pro'),
+                'label' => esc_html__('Icon Position', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'before' => [
-                        'title' => esc_html__('Before', 'hugeicons-pro'),
+                        'title' => esc_html__('Before', 'exinoicons-pro'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'after' => [
-                        'title' => esc_html__('After', 'hugeicons-pro'),
+                        'title' => esc_html__('After', 'exinoicons-pro'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
@@ -161,25 +161,25 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'button_align',
             [
-                'label' => esc_html__('Alignment', 'hugeicons-pro'),
+                'label' => esc_html__('Alignment', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'hugeicons-pro'),
+                        'title' => esc_html__('Left', 'exinoicons-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'hugeicons-pro'),
+                        'title' => esc_html__('Center', 'exinoicons-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'hugeicons-pro'),
+                        'title' => esc_html__('Right', 'exinoicons-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
                 'default' => 'center',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-wrapper' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__button-wrapper' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -190,7 +190,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'style_button_section',
             [
-                'label' => esc_html__('Button', 'hugeicons-pro'),
+                'label' => esc_html__('Button', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -199,7 +199,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'button_typography',
-                'selector' => '{{WRAPPER}} .hugeicons__button-widget',
+                'selector' => '{{WRAPPER}} .exinoicons__button-widget',
             ]
         );
 
@@ -209,19 +209,19 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'button_normal_tab',
             [
-                'label' => esc_html__('Normal', 'hugeicons-pro'),
+                'label' => esc_html__('Normal', 'exinoicons-pro'),
             ]
         );
 
         $this->add_control(
             'button_text_color',
             [
-                'label' => esc_html__('Text Color', 'hugeicons-pro'),
+                'label' => esc_html__('Text Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#ffffff',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-widget' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .hugeicons__button-widget svg' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__button-widget' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__button-widget svg' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -229,11 +229,11 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'button_background_color',
             [
-                'label' => esc_html__('Background Color', 'hugeicons-pro'),
+                'label' => esc_html__('Background Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#6366f1',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-widget' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__button-widget' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -244,18 +244,18 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->start_controls_tab(
             'button_hover_tab',
             [
-                'label' => esc_html__('Hover', 'hugeicons-pro'),
+                'label' => esc_html__('Hover', 'exinoicons-pro'),
             ]
         );
 
         $this->add_control(
             'button_text_color_hover',
             [
-                'label' => esc_html__('Text Color', 'hugeicons-pro'),
+                'label' => esc_html__('Text Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-widget:hover' => 'color: {{VALUE}};',
-                    '{{WRAPPER}} .hugeicons__button-widget:hover svg' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__button-widget:hover' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__button-widget:hover svg' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -263,10 +263,10 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'button_background_color_hover',
             [
-                'label' => esc_html__('Background Color', 'hugeicons-pro'),
+                'label' => esc_html__('Background Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-widget:hover' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__button-widget:hover' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -278,7 +278,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'button_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'hugeicons-pro'),
+                'label' => esc_html__('Border Radius', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em', 'rem'],
                 'default' => [
@@ -291,7 +291,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
                 ],
                 'separator' => 'before',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-widget' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__button-widget' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -299,7 +299,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'button_padding',
             [
-                'label' => esc_html__('Padding', 'hugeicons-pro'),
+                'label' => esc_html__('Padding', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em', 'rem'],
                 'default' => [
@@ -311,7 +311,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
                     'isLinked' => false,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-widget' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__button-widget' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -320,7 +320,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'button_box_shadow',
-                'selector' => '{{WRAPPER}} .hugeicons__button-widget',
+                'selector' => '{{WRAPPER}} .exinoicons__button-widget',
             ]
         );
 
@@ -330,7 +330,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'style_icon_section',
             [
-                'label' => esc_html__('Icon', 'hugeicons-pro'),
+                'label' => esc_html__('Icon', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -338,7 +338,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'icon_size',
             [
-                'label' => esc_html__('Size', 'hugeicons-pro'),
+                'label' => esc_html__('Size', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', 'rem'],
                 'range' => [
@@ -353,7 +353,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
                     'size' => 20,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__button-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -361,7 +361,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'icon_spacing',
             [
-                'label' => esc_html__('Spacing', 'hugeicons-pro'),
+                'label' => esc_html__('Spacing', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', 'rem'],
                 'range' => [
@@ -376,7 +376,7 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
                     'size' => 8,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__button-widget' => 'gap: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__button-widget' => 'gap: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -394,17 +394,17 @@ class Hugeicons_Icon_Button_Widget extends \Elementor\Widget_Base
     {
         $settings = $this->get_settings_for_display();
 
-        $this->add_render_attribute('wrapper', 'class', 'hugeicons__button-wrapper');
+        $this->add_render_attribute('wrapper', 'class', 'exinoicons__button-wrapper');
 
-        $this->add_render_attribute('button', 'class', 'hugeicons__button-widget');
-        $this->add_render_attribute('button', 'class', 'hugeicons__button-icon-' . $settings['icon_position']);
+        $this->add_render_attribute('button', 'class', 'exinoicons__button-widget');
+        $this->add_render_attribute('button', 'class', 'exinoicons__button-icon-' . $settings['icon_position']);
 
         if (!empty($settings['button_link']['url'])) {
             $this->add_link_attributes('button', $settings['button_link']);
         }
 
-        $icon_html = '<span class="hugeicons__button-icon">' . $settings['icon'] . '</span>';
-        $text_html = '<span class="hugeicons__button-text">' . esc_html($settings['button_text']) . '</span>';
+        $icon_html = '<span class="exinoicons__button-icon">' . $settings['icon'] . '</span>';
+        $text_html = '<span class="exinoicons__button-text">' . esc_html($settings['button_text']) . '</span>';
         ?>
         <div <?php echo $this->get_render_attribute_string('wrapper'); ?>>
             <a <?php echo $this->get_render_attribute_string('button'); ?>>

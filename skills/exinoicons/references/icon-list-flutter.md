@@ -1,7 +1,8 @@
-# Hugeicons Icon List (Flutter)
+# Exinoicons Icon List (Flutter)
+
 Total icons: 4547
 
-Source: packages/flutter/lib/hugeicons.dart. Generated — do not edit by hand.
+Source: packages/flutter/lib/exinoicons.dart. Generated — do not edit by hand.
 
 - `HugeIcons.strokeRounded0Circle`
 - `HugeIcons.strokeRounded0Square`
@@ -1967,7 +1968,7 @@ Source: packages/flutter/lib/hugeicons.dart. Generated — do not edit by hand.
 - `HugeIcons.strokeRoundedHtml5`
 - `HugeIcons.strokeRoundedHtmlFile01`
 - `HugeIcons.strokeRoundedHtmlFile02`
-- `HugeIcons.strokeRoundedHugeicons`
+- `HugeIcons.strokeRoundedExinoicons`
 - `HugeIcons.strokeRoundedHumidity`
 - `HugeIcons.strokeRoundedHut`
 - `HugeIcons.strokeRoundedHydroPower`

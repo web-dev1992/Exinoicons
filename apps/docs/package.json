@@ -1,5 +1,5 @@
 {
-  "name": "@hugeicons/docs",
+  "name": "@exinoicons/docs",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -10,8 +10,8 @@
     "typecheck": "tsc --noEmit --pretty false"
   },
   "dependencies": {
-    "@hugeicons/core-free-icons": "workspace:*",
-    "@hugeicons/react": "workspace:*",
+    "@exinoicons/core-free-icons": "workspace:*",
+    "@exinoicons/react": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

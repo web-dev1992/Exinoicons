@@ -6,7 +6,7 @@ import terser from "@rollup/plugin-terser";
 import fs from "fs";
 import path from "path";
 
-const packageName = "@hugeicons/core-free-icons";
+const packageName = "@exinoicons/core-free-icons";
 const outputDir = "dist";
 
 // Get all icon files dynamically
@@ -433,7 +433,7 @@ const cjsScopePlugin = () => ({
   },
 });
 
-// Case-exact check of what was just built (hugeicons/hugeicons#41): the barrel referenced
+// Case-exact check of what was just built (exinoicons/exinoicons#41): the barrel referenced
 // ./Grid2x2Icon.js while a stale macOS dist/ still held Grid2X2Icon.js. macOS resolves both,
 // Linux does not. Everything here compares against readdirSync names, never existsSync,
 // which is case-insensitive on macOS and would hide exactly this bug.

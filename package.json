@@ -1,12 +1,12 @@
 {
-  "name": "hugeicons",
+  "name": "exinoicons",
   "version": "0.0.0",
   "private": true,
-  "description": "Official Hugeicons libraries for React, Vue, Svelte, Angular, React Native, Flutter, and more.",
-  "homepage": "https://hugeicons.com",
+  "description": "Official exinoicons libraries for React, Vue, Svelte, Angular, React Native, Flutter, and more.",
+  "homepage": "https://exinoicons.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugeicons/hugeicons.git"
+    "url": "https://github.com/exinoicons/exinoicons.git"
   },
   "license": "MIT",
   "packageManager": "pnpm@10.30.0",
@@ -18,8 +18,8 @@
     "typecheck": "pnpm -r run typecheck",
     "test": "pnpm -r run test",
     "clean": "pnpm -r run clean",
-    "docs:dev": "pnpm --filter @hugeicons/docs dev",
-    "docs:build": "pnpm --filter @hugeicons/docs build",
-    "docs:preview": "pnpm --filter @hugeicons/docs preview"
+    "docs:dev": "pnpm --filter @exinoicons/docs dev",
+    "docs:build": "pnpm --filter @exinoicons/docs build",
+    "docs:preview": "pnpm --filter @exinoicons/docs preview"
   }
 }

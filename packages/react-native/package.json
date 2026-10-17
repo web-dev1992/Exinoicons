@@ -1,10 +1,10 @@
 {
-  "name": "@hugeicons/react-native",
+  "name": "@exinoicons/react-native",
   "version": "1.0.15",
-  "description": "Hugeicons React Native Component Library https://hugeicons.com",
-  "homepage": "https://hugeicons.com",
+  "description": "Exinoicons React Native Component Library https://exinoicons.com",
+  "homepage": "https://exinoicons.com",
   "license": "MIT",
-  "amdName": "hugeicons-pro-react-native",
+  "amdName": "exinoicons-pro-react-native",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "types": "./dist/types/index.d.ts",
@@ -18,11 +18,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugeicons/hugeicons.git",
+    "url": "https://github.com/exinoicons/exinoicons.git",
     "directory": "packages/react-native"
   },
   "bugs": {
-    "url": "https://github.com/hugeicons/hugeicons/issues"
+    "url": "https://github.com/exinoicons/exinoicons/issues"
   },
   "exports": {
     ".": {
@@ -31,7 +31,7 @@
       "require": "./dist/cjs/index.js"
     }
   },
-  "author": "Hugeicons",
+  "author": "Exinoicons",
   "scripts": {
     "build": "pnpm clean && pnpm typecheck && pnpm build:bundles",
     "build:bundles": "rollup -c ./rollup.config.mjs",
@@ -58,7 +58,7 @@
     "react-native-svg": ">=12.0.0"
   },
   "keywords": [
-    "hugeicons",
+    "exinoicons",
     "react-native",
     "icons",
     "react-native-icons",

@@ -1,10 +1,10 @@
 {
-  "name": "@hugeicons/solid-js",
+  "name": "@exinoicons/solid-js",
   "version": "1.0.0",
-  "description": "Hugeicons SolidJS Component Library https://hugeicons.com",
-  "homepage": "https://hugeicons.com",
+  "description": "Exinoicons SolidJS Component Library https://exinoicons.com",
+  "homepage": "https://exinoicons.com",
   "license": "MIT",
-  "amdName": "hugeicons-solid-js",
+  "amdName": "exinoicons-solid-js",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
   "solid": "./dist/source/index.jsx",
@@ -19,11 +19,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugeicons/hugeicons.git",
+    "url": "https://github.com/exinoicons/exinoicons.git",
     "directory": "packages/solid-js"
   },
   "bugs": {
-    "url": "https://github.com/hugeicons/hugeicons/issues"
+    "url": "https://github.com/exinoicons/exinoicons/issues"
   },
   "publishConfig": {
     "access": "public"
@@ -38,7 +38,7 @@
       "node": "./dist/cjs/index.js"
     }
   },
-  "author": "Hugeicons",
+  "author": "Exinoicons",
   "scripts": {
     "build": "pnpm clean && pnpm typecheck && pnpm build:bundles",
     "build:bundles": "rollup -c ./rollup.config.mjs",
@@ -57,7 +57,7 @@
     "solid-js": "^1.8.0"
   },
   "keywords": [
-    "hugeicons",
+    "exinoicons",
     "solid",
     "solidjs",
     "icons",

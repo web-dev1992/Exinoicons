@@ -1,3 +1,6 @@
-import HugeiconsIcon from './components/HugeiconsIcon.svelte';
-export { HugeiconsIcon };
-export type { IconSvgElement, HugeiconsProps } from './create-hugeicon-singleton';
+import ExinoiconsIcon from "./components/ExinoiconsIcon.svelte";
+export { ExinoiconsIcon };
+export type {
+  IconSvgElement,
+  ExinoiconsProps,
+} from "./create-exinoicon-singleton";

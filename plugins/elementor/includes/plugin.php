@@ -1,6 +1,6 @@
 <?php
 
-namespace Hugeicons_Pro;
+namespace Exinoicons_Pro;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -46,7 +46,7 @@ final class Plugin
      * @since 1.0.0
      * @access private
      * @static
-     * @var \Hugeicons_Pro\Plugin The single instance of the class.
+     * @var \Exinoicons_Pro\Plugin The single instance of the class.
      */
     private static $_instance = null;
 
@@ -55,7 +55,7 @@ final class Plugin
      *
      * Ensures only one instance of the class is loaded or can be loaded.
      *
-     * @return \Hugeicons_Pro\Plugin An instance of the class.
+     * @return \Exinoicons_Pro\Plugin An instance of the class.
      * @since 1.0.0
      * @access public
      * @static
@@ -136,9 +136,9 @@ final class Plugin
 
         $message = sprintf(
         /* translators: 1: Plugin name 2: Elementor */
-            esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'hugeicons-elementor'),
-            '<strong>' . esc_html__('Hugeicons Pro', 'hugeicons-elementor') . '</strong>',
-            '<strong>' . esc_html__('Elementor', 'hugeicons-elementor') . '</strong>'
+            esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'exinoicons-elementor'),
+            '<strong>' . esc_html__('Exinoicons Pro', 'exinoicons-elementor') . '</strong>',
+            '<strong>' . esc_html__('Elementor', 'exinoicons-elementor') . '</strong>'
         );
 
         printf('<div class="notice notice-warning is-dismissible"><p>%1$s</p></div>', $message);
@@ -160,9 +160,9 @@ final class Plugin
 
         $message = sprintf(
         /* translators: 1: Plugin name 2: Elementor 3: Required Elementor version */
-            esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'hugeicons-elementor'),
-            '<strong>' . esc_html__('Hugeicons Pro', 'hugeicons-elementor') . '</strong>',
-            '<strong>' . esc_html__('Elementor', 'hugeicons-elementor') . '</strong>',
+            esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'exinoicons-elementor'),
+            '<strong>' . esc_html__('Exinoicons Pro', 'exinoicons-elementor') . '</strong>',
+            '<strong>' . esc_html__('Elementor', 'exinoicons-elementor') . '</strong>',
             self::MINIMUM_ELEMENTOR_VERSION
         );
 
@@ -185,9 +185,9 @@ final class Plugin
 
         $message = sprintf(
         /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-            esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'hugeicons-elementor'),
-            '<strong>' . esc_html__('Hugeicons Pro', 'hugeicons-elementor') . '</strong>',
-            '<strong>' . esc_html__('PHP', 'hugeicons-pro') . '</strong>',
+            esc_html__('"%1$s" requires "%2$s" version %3$s or greater.', 'exinoicons-elementor'),
+            '<strong>' . esc_html__('Exinoicons Pro', 'exinoicons-elementor') . '</strong>',
+            '<strong>' . esc_html__('PHP', 'exinoicons-pro') . '</strong>',
             self::MINIMUM_PHP_VERSION
         );
 
@@ -240,7 +240,7 @@ final class Plugin
      */
     public function register_settings()
     {
-        register_setting('hugeicons-settings-group', 'hugeicons-license', [
+        register_setting('exinoicons-settings-group', 'exinoicons-license', [
             'type' => 'string',
             'sanitize_callback' => [$this, 'sanitize_license'],
             'default' => ''
@@ -257,15 +257,15 @@ final class Plugin
      */
     public function handle_license_deactivation()
     {
-        if (isset($_POST['hugeicons-deactivate-license'])) {
+        if (isset($_POST['exinoicons-deactivate-license'])) {
             // Security check
-            check_admin_referer('hugeicons-settings-group-options');
+            check_admin_referer('exinoicons-settings-group-options');
 
             // Clear the option
-            update_option('hugeicons-license', '');
+            update_option('exinoicons-license', '');
 
             // Redirect back to the settings page (optional)
-            wp_redirect(add_query_arg('page', 'hugeicons-pro-settings', admin_url('options-general.php')));
+            wp_redirect(add_query_arg('page', 'exinoicons-pro-settings', admin_url('options-general.php')));
             exit;
         }
     }
@@ -281,7 +281,7 @@ final class Plugin
      * @return bool True if the license is valid, false otherwise.
      */
     public function validate_license($license) {
-        $api_url = 'https://hugeicons.com/api/validate-license'; // Your API URL
+        $api_url = 'https://exinoicons.com/api/validate-license'; // Your API URL
 
         // Make the GET request
         $response = wp_remote_get($api_url . "?license=$license");
@@ -316,8 +316,8 @@ final class Plugin
                 return $license;
             }else{
                 add_settings_error(
-                    'hugeicons-license',
-                    'hugeicons-license-error',
+                    'exinoicons-license',
+                    'exinoicons-license-error',
                     'Invalid license key',
                     'error'
                 );
@@ -337,8 +337,8 @@ final class Plugin
     {
 
         wp_enqueue_style(
-            'hugeicons-pro-admin',
-            HUGEICONS_PRO_URL . 'assets/css/hugeicons-pro-admin.css',
+            'exinoicons-pro-admin',
+            HUGEICONS_PRO_URL . 'assets/css/exinoicons-pro-admin.css',
             [],
             self::VERSION
         );
@@ -354,15 +354,15 @@ final class Plugin
     {
 
         wp_enqueue_style(
-            'hugeicons-pro',
-            HUGEICONS_PRO_URL . 'assets/css/hugeicons-pro-frontend.css',
+            'exinoicons-pro',
+            HUGEICONS_PRO_URL . 'assets/css/exinoicons-pro-frontend.css',
             [],
             self::VERSION
         );
 
         wp_enqueue_script(
-            'hugeicons-faq-widget',
-            HUGEICONS_PRO_URL . 'assets/js/hugeicons-faq-widget.js',
+            'exinoicons-faq-widget',
+            HUGEICONS_PRO_URL . 'assets/js/exinoicons-faq-widget.js',
             ['jquery'],
             self::VERSION,
             true
@@ -379,8 +379,8 @@ final class Plugin
     {
 
         wp_enqueue_script(
-            'hugeicons-pro-editor',
-            HUGEICONS_PRO_URL . 'assets/js/hugeicons-pro-editor.js',
+            'exinoicons-pro-editor',
+            HUGEICONS_PRO_URL . 'assets/js/exinoicons-pro-editor.js',
             ['jquery'],
             self::VERSION,
             true
@@ -397,8 +397,8 @@ final class Plugin
     {
 
         wp_enqueue_style(
-            'hugeicons-pro-editor',
-            HUGEICONS_PRO_URL . 'assets/css/hugeicons-pro-editor.css',
+            'exinoicons-pro-editor',
+            HUGEICONS_PRO_URL . 'assets/css/exinoicons-pro-editor.css',
             [],
             self::VERSION
         );
@@ -416,9 +416,9 @@ final class Plugin
     {
 
         $elements_manager->add_category(
-            'hugeicons-icons',
+            'exinoicons-icons',
             [
-                'title' => esc_html__('Hugeicons', 'hugeicons-pro'),
+                'title' => esc_html__('Exinoicons', 'exinoicons-pro'),
             ]
         );
     }
@@ -441,14 +441,14 @@ final class Plugin
         require_once(__DIR__ . '/widgets/icon-list.php');
         require_once(__DIR__ . '/widgets/faq.php');
 
-        $license_key = get_option('hugeicons-license', '');
+        $license_key = get_option('exinoicons-license', '');
 
         if (!empty($license_key)) {
-            $widgets_manager->register(new \Hugeicons_Icon_Widget());
-            $widgets_manager->register(new \Hugeicons_Icon_Box_Widget());
-            $widgets_manager->register(new \Hugeicons_Icon_Button_Widget());
-            $widgets_manager->register(new \Hugeicons_Icon_List_Widget());
-            $widgets_manager->register(new \Hugeicons_FAQ_Widget());
+            $widgets_manager->register(new \Exinoicons_Icon_Widget());
+            $widgets_manager->register(new \Exinoicons_Icon_Box_Widget());
+            $widgets_manager->register(new \Exinoicons_Icon_Button_Widget());
+            $widgets_manager->register(new \Exinoicons_Icon_List_Widget());
+            $widgets_manager->register(new \Exinoicons_FAQ_Widget());
         }
 
     }
@@ -465,7 +465,7 @@ final class Plugin
     public function register_controls($controls_manager)
     {
         require_once(__DIR__ . '/controls/icon-browse.php');
-        $controls_manager->register(new \Hugeicons_Icon_Browse_Control());
+        $controls_manager->register(new \Exinoicons_Icon_Browse_Control());
     }
 
     /**
@@ -480,12 +480,12 @@ final class Plugin
     {
         add_submenu_page(
             'options-general.php', // Parent slug
-            'Hugeicons Pro Settings', // Page title
-            'Hugeicons Pro', // Menu title
+            'Exinoicons Pro Settings', // Page title
+            'Exinoicons Pro', // Menu title
             'manage_options', // Capability
-            'hugeicons-pro-settings', // Menu slug
+            'exinoicons-pro-settings', // Menu slug
             [$this, 'display_settings_page'], // Function to display the content
-            'hgi-hugeicons-logo', // Icon URL
+            'hgi-exinoicons-logo', // Icon URL
             6 // Position
         );
     }
@@ -505,19 +505,19 @@ final class Plugin
             return;
         }
 
-        // Check if the 'hugeicons-license' setting is saved
-        $license_key = get_option('hugeicons-license', '');
+        // Check if the 'exinoicons-license' setting is saved
+        $license_key = get_option('exinoicons-license', '');
 
         ?>
         <div class="wrap">
             <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
 
-            <div class="hugeicons-admin__wrap">
+            <div class="exinoicons-admin__wrap">
                 <form method="post" action="options.php">
-                    <?php settings_fields('hugeicons-settings-group'); ?>
-                    <?php do_settings_sections('hugeicons-settings-group'); ?>
+                    <?php settings_fields('exinoicons-settings-group'); ?>
+                    <?php do_settings_sections('exinoicons-settings-group'); ?>
                     <?php if (empty($license_key)): ?>
-                        <div class="hugeicons-admin__intro">
+                        <div class="exinoicons-admin__intro">
                             <h3>Unlock Premium</h3>
                             <p>Beautify your projects with pro features!</p>
                         </div>
@@ -527,7 +527,7 @@ final class Plugin
                                 <td>
                                     <input
                                             type="text"
-                                            name="hugeicons-license"
+                                            name="exinoicons-license"
                                             value="<?php echo esc_attr($license_key); ?>"
                                             placeholder="81F507EC-95324D86-8EEDEDED-06201942"
                                     />
@@ -539,13 +539,13 @@ final class Plugin
                         <?php submit_button('Activate License'); ?>
                     <?php else: ?>
                         <div>
-                            <div class="hugeicons-admin__intro">
+                            <div class="exinoicons-admin__intro">
                                 <h3>Enjoy Premium</h3>
                                 <p>Thank you for your support!</p>
                             </div>
                             <p>License Key: <strong><?php echo esc_html($license_key); ?></strong></p>
-                            <input type="submit" name="hugeicons-deactivate-license" class="button button-secondary"
-                                   value="<?php esc_attr_e('Deactivate License', 'hugeicons-pro'); ?>"/>
+                            <input type="submit" name="exinoicons-deactivate-license" class="button button-secondary"
+                                   value="<?php esc_attr_e('Deactivate License', 'exinoicons-pro'); ?>"/>
                         </div>
                     <?php endif; ?>
                 </form>

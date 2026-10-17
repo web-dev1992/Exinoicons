@@ -57,13 +57,10 @@ input {
   margin-bottom: 20px;
 }
 
-.hero__brand {
-  margin-bottom: 18px;
-}
 
 .hero__logo {
   display: block;
-  height: 28px;
+  height: 48px;
   width: auto;
 }
 

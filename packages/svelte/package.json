@@ -1,8 +1,8 @@
 {
-  "name": "@hugeicons/svelte",
+  "name": "@exinoicons/svelte",
   "version": "1.1.4",
-  "description": "Hugeicons Svelte Component Library https://hugeicons.com",
-  "homepage": "https://hugeicons.com",
+  "description": "Exinoicons Svelte Component Library https://exinoicons.com",
+  "homepage": "https://exinoicons.com",
   "license": "MIT",
   "type": "module",
   "main": "./dist/index.umd.js",
@@ -28,11 +28,11 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugeicons/hugeicons.git",
+    "url": "https://github.com/exinoicons/exinoicons.git",
     "directory": "packages/svelte"
   },
   "bugs": {
-    "url": "https://github.com/hugeicons/hugeicons/issues"
+    "url": "https://github.com/exinoicons/exinoicons/issues"
   },
   "scripts": {
     "prepare": "svelte-kit sync",
@@ -60,7 +60,7 @@
     "vite": "^6.0.0"
   },
   "keywords": [
-    "hugeicons",
+    "exinoicons",
     "svelte",
     "icons",
     "svelte-icons",
@@ -70,5 +70,5 @@
     "icon-library",
     "typescript"
   ],
-  "author": "Hugeicons"
+  "author": "Exinoicons"
 }

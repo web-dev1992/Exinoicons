@@ -1,2 +1,2 @@
-export * from './components/hugeicons-icon.component';
-export * from './lib/types'; 
+export * from "./components/exinoicons-icon.component";
+export * from "./lib/types";

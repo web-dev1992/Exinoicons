@@ -5,16 +5,16 @@ $control_uid = $this->get_control_uid( 'icon' );
 ?>
 
 <div class="dialog-widget dialog-lightbox-widget dialog-type-buttons dialog-type-lightbox elementor-templates-modal"
-     id="hugeicons-pro-icons-modal" aria-modal="true" role="document" tabindex="0" style="">
+     id="exinoicons-pro-icons-modal" aria-modal="true" role="document" tabindex="0" style="">
     <div class="dialog-widget-content dialog-lightbox-widget-content">
         <div class="dialog-header dialog-lightbox-header">
             <div class="elementor-templates-modal__header">
                 <div class="elementor-templates-modal__header__logo-area">
                     <div class="elementor-templates-modal__header__logo">
-	<span class="elementor-templates-modal__header__logo__icon-wrapper hugeicons__logo-wrapper">
-		<i class="hgi-hugeicons-logo"></i>
+	<span class="elementor-templates-modal__header__logo__icon-wrapper exinoicons__logo-wrapper">
+		<i class="hgi-exinoicons-logo"></i>
 	</span>
-                        <span class="elementor-templates-modal__header__logo__title">Hugeicons Library</span>
+                        <span class="elementor-templates-modal__header__logo__title">Exinoicons Library</span>
                     </div>
                 </div>
                 <div class="elementor-templates-modal__header__menu-area"></div>
@@ -32,12 +32,12 @@ $control_uid = $this->get_control_uid( 'icon' );
         </div>
         <div class="dialog-message dialog-lightbox-message">
             <div class="dialog-content dialog-lightbox-content">
-                <div id="hugeicons-icon-browser-app"></div>
+                <div id="exinoicons-icon-browser-app"></div>
             </div>
             <div class="dialog-loading dialog-lightbox-loading"></div>
         </div>
         <div class="dialog-buttons-wrapper dialog-lightbox-buttons-wrapper">
-            <button class="elementor-button e-primary dialog-button dialog-insert_icon dialog-lightbox-insert_icon" id="hugeicons__icon-select">
+            <button class="elementor-button e-primary dialog-button dialog-insert_icon dialog-lightbox-insert_icon" id="exinoicons__icon-select">
                 Insert
             </button>
         </div>

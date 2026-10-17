@@ -1,13 +1,13 @@
-import type { App } from 'vue';
-import HugeiconsIcon from './components/HugeiconsIcon.vue';
+import type { App } from "vue";
+import ExinoiconsIcon from "./components/ExinoiconsIcon.vue";
 
-export { default as HugeiconsIcon } from './components/HugeiconsIcon.vue';
-export * from './types';
+export { default as ExinoiconsIcon } from "./components/ExinoiconsIcon.vue";
+export * from "./types";
 
-export const HugeiconsPlugin = {
+export const ExinoiconsPlugin = {
   install: (app: App) => {
-    app.component('HugeiconsIcon', HugeiconsIcon);
-  }
+    app.component("ExinoiconsIcon", ExinoiconsIcon);
+  },
 };
 
-export default HugeiconsPlugin; 
+export default ExinoiconsPlugin;

@@ -22,11 +22,11 @@ export interface SvgChildNode {
  * server-rendered HTML. Any children already present (e.g. from SSR) are replaced.
  */
 @Directive({
-  selector: "svg[hugeiconsSvgChildren]",
+  selector: "svg[exinoiconsSvgChildren]",
   standalone: true,
 })
-export class HugeiconsSvgChildrenDirective implements OnChanges {
-  @Input({ required: true }) hugeiconsSvgChildren!: readonly SvgChildNode[];
+export class ExinoiconsSvgChildrenDirective implements OnChanges {
+  @Input({ required: true }) exinoiconsSvgChildren!: readonly SvgChildNode[];
 
   private readonly host: ElementRef<SVGSVGElement> = inject(ElementRef);
   private readonly renderer = inject(Renderer2);
@@ -38,7 +38,7 @@ export class HugeiconsSvgChildrenDirective implements OnChanges {
       this.renderer.removeChild(svg, svg.firstChild);
     }
 
-    for (const { tag, ...props } of this.hugeiconsSvgChildren ?? []) {
+    for (const { tag, ...props } of this.exinoiconsSvgChildren ?? []) {
       const child = this.renderer.createElement(tag, "svg");
       for (const [prop, value] of Object.entries(props)) {
         const attribute = toSvgAttribute(prop, value);

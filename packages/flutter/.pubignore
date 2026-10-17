@@ -1,5 +1,5 @@
-# pub honours .gitignore when a package lives in a git repo. In hugeicons/core the
-# generated icon files (lib/styles/*.dart, hugeicons_full.dart) are gitignored,
+# pub honours .gitignore when a package lives in a git repo. In exinoicons/core the
+# generated icon files (lib/styles/*.dart, exinoicons_full.dart) are gitignored,
 # so this file must exist to take precedence and list
 # ONLY what is really excluded from the published archive.
 .dart_tool/

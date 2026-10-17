@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * MCP server for Hugeicons search and usage documentation
+ * MCP server for Exinoicons search and usage documentation
  * This server provides tools to:
  * - Search icons by name or tags
  * - Get icon details and usage information
@@ -27,34 +27,38 @@ import { Platform, PLATFORM_USAGE } from "./utils/platform-usage.js";
 import { convertPlatformUsageToMarkdown } from "./utils/markdown-converter.js";
 
 /**
- * HugeiconsServer class that handles all the icon search and reference functionality
+ * ExinoiconsServer class that handles all the icon search and reference functionality
  */
-class HugeiconsServer {
+class ExinoiconsServer {
   private server: Server;
   private iconsCache: IconInfo[] | null = null;
 
   constructor() {
     this.server = new Server(
       {
-        name: "hugeicons-mcp",
+        name: "exinoicons-mcp",
         version: "0.1.0",
       },
       {
         capabilities: {
           tools: {},
-          resources: {}
+          resources: {},
         },
-      }
+      },
     );
 
     this.setupToolHandlers();
     this.setupResourceHandlers();
-    
+
     // Add analytics tracking
-    trackMCP(this.server, "54bfb286-b439-4dc8-9fbe-d08ce48c5d8d", createConfig({
-      endpoint: "https://api.agnost.ai"
-    }));
-    
+    trackMCP(
+      this.server,
+      "54bfb286-b439-4dc8-9fbe-d08ce48c5d8d",
+      createConfig({
+        endpoint: "https://api.agnost.ai",
+      }),
+    );
+
     this.server.onerror = (error) => console.error("[MCP Error]", error);
     process.on("SIGINT", async () => {
       await this.server.close();
@@ -70,7 +74,7 @@ class HugeiconsServer {
       tools: [
         {
           name: "list_icons",
-          description: "Get a list of all available Hugeicons icons",
+          description: "Get a list of all available Exinoicons icons",
           inputSchema: {
             type: "object",
             properties: {},
@@ -79,28 +83,41 @@ class HugeiconsServer {
         },
         {
           name: "search_icons",
-          description: "Search for icons by name or tags. Use commas to search for multiple icons (e.g. 'home, notification, settings')",
+          description:
+            "Search for icons by name or tags. Use commas to search for multiple icons (e.g. 'home, notification, settings')",
           inputSchema: {
             type: "object",
             properties: {
               query: {
                 type: "string",
-                description: "Search query to find relevant icons. Separate multiple searches with commas",
-              }
+                description:
+                  "Search query to find relevant icons. Separate multiple searches with commas",
+              },
             },
             required: ["query"],
           },
         },
         {
           name: "get_platform_usage",
-          description: "Get platform-specific usage instructions for Hugeicons",
+          description:
+            "Get platform-specific usage instructions for Exinoicons",
           inputSchema: {
             type: "object",
             properties: {
               platform: {
                 type: "string",
-                description: "Platform name (react, vue, angular, svelte, solid-js, react-native, flutter, html)",
-                enum: ["react", "vue", "angular", "svelte", "solid-js", "react-native", "flutter", "html"]
+                description:
+                  "Platform name (react, vue, angular, svelte, solid-js, react-native, flutter, html)",
+                enum: [
+                  "react",
+                  "vue",
+                  "angular",
+                  "svelte",
+                  "solid-js",
+                  "react-native",
+                  "flutter",
+                  "html",
+                ],
               },
             },
             required: ["platform"],
@@ -108,27 +125,31 @@ class HugeiconsServer {
         },
         {
           name: "get_icon_glyphs",
-          description: "Get all glyphs (unicode characters) for a specific icon across all available styles",
+          description:
+            "Get all glyphs (unicode characters) for a specific icon across all available styles",
           inputSchema: {
             type: "object",
             properties: {
               icon_name: {
                 type: "string",
-                description: "The name of the icon (e.g., 'home-01', 'notification-02')",
-              }
+                description:
+                  "The name of the icon (e.g., 'home-01', 'notification-02')",
+              },
             },
             required: ["icon_name"],
           },
         },
         {
           name: "get_icon_glyph_by_style",
-          description: "Get the glyph (unicode character) for a specific icon with a particular style",
+          description:
+            "Get the glyph (unicode character) for a specific icon with a particular style",
           inputSchema: {
             type: "object",
             properties: {
               icon_name: {
                 type: "string",
-                description: "The name of the icon (e.g., 'home-01', 'notification-02')",
+                description:
+                  "The name of the icon (e.g., 'home-01', 'notification-02')",
               },
               style: {
                 type: "string",
@@ -143,9 +164,9 @@ class HugeiconsServer {
                   "stroke-rounded",
                   "stroke-sharp",
                   "stroke-standard",
-                  "twotone-rounded"
-                ]
-              }
+                  "twotone-rounded",
+                ],
+              },
             },
             required: ["icon_name", "style"],
           },
@@ -168,7 +189,7 @@ class HugeiconsServer {
         default:
           throw new McpError(
             ErrorCode.MethodNotFound,
-            `Unknown tool: ${request.params.name}`
+            `Unknown tool: ${request.params.name}`,
           );
       }
     });
@@ -183,103 +204,111 @@ class HugeiconsServer {
       return {
         resources: [
           {
-            uri: "hugeicons://docs/platforms/react",
+            uri: "exinoicons://docs/platforms/react",
             name: "React Usage Guide",
             mimeType: "text/markdown",
-            description: "React implementation guide for Hugeicons"
+            description: "React implementation guide for Exinoicons",
           },
           {
-            uri: "hugeicons://docs/platforms/vue",
+            uri: "exinoicons://docs/platforms/vue",
             name: "Vue Usage Guide",
             mimeType: "text/markdown",
-            description: "Vue implementation guide for Hugeicons"
+            description: "Vue implementation guide for Exinoicons",
           },
           {
-            uri: "hugeicons://docs/platforms/angular",
+            uri: "exinoicons://docs/platforms/angular",
             name: "Angular Usage Guide",
             mimeType: "text/markdown",
-            description: "Angular implementation guide for Hugeicons"
+            description: "Angular implementation guide for Exinoicons",
           },
           {
-            uri: "hugeicons://docs/platforms/svelte",
+            uri: "exinoicons://docs/platforms/svelte",
             name: "Svelte Usage Guide",
             mimeType: "text/markdown",
-            description: "Svelte implementation guide for Hugeicons"
+            description: "Svelte implementation guide for Exinoicons",
           },
           {
-            uri: "hugeicons://docs/platforms/solid-js",
+            uri: "exinoicons://docs/platforms/solid-js",
             name: "SolidJS Usage Guide",
             mimeType: "text/markdown",
-            description: "SolidJS implementation guide for Hugeicons"
+            description: "SolidJS implementation guide for Exinoicons",
           },
           {
-            uri: "hugeicons://docs/platforms/react-native",
+            uri: "exinoicons://docs/platforms/react-native",
             name: "React Native Usage Guide",
             mimeType: "text/markdown",
-            description: "React Native implementation guide for Hugeicons"
+            description: "React Native implementation guide for Exinoicons",
           },
           {
-            uri: "hugeicons://docs/platforms/flutter",
+            uri: "exinoicons://docs/platforms/flutter",
             name: "Flutter Usage Guide",
             mimeType: "text/markdown",
-            description: "Flutter implementation guide for Hugeicons"
+            description: "Flutter implementation guide for Exinoicons",
           },
           {
-            uri: "hugeicons://docs/platforms/html",
+            uri: "exinoicons://docs/platforms/html",
             name: "HTML Usage Guide",
             mimeType: "text/markdown",
-            description: "HTML implementation guide for Hugeicons (font-based)"
+            description:
+              "HTML implementation guide for Exinoicons (font-based)",
           },
           {
-            uri: "hugeicons://icons/index",
+            uri: "exinoicons://icons/index",
             name: "Icons Index",
             mimeType: "application/json",
-            description: "Complete index of all Hugeicons"
-          }
-        ]
+            description: "Complete index of all Exinoicons",
+          },
+        ],
       };
     });
 
     // Handle resource reading
-    this.server.setRequestHandler(ReadResourceRequestSchema, async (request) => {
-      const uri = request.params.uri;
-      
-      if (uri.startsWith("hugeicons://docs/platforms/")) {
-        const platform = uri.split("/").pop() as Platform;
-        const usage = PLATFORM_USAGE[platform];
-        
-        if (!usage) {
-          throw new McpError(
-            ErrorCode.InvalidRequest,
-            `Platform documentation not found for: ${platform}`
-          );
-        }
-        
-        return {
-          contents: [{
-            uri,
-            mimeType: "text/markdown",
-            text: convertPlatformUsageToMarkdown(usage)
-          }]
-        };
-      }
-      
-      if (uri === "hugeicons://icons/index") {
-        await this.ensureIconsLoaded();
-        return {
-          contents: [{
-            uri,
-            mimeType: "application/json",
-            text: JSON.stringify(this.iconsCache, null, 2)
-          }]
-        };
-      }
+    this.server.setRequestHandler(
+      ReadResourceRequestSchema,
+      async (request) => {
+        const uri = request.params.uri;
 
-      throw new McpError(
-        ErrorCode.InvalidRequest,
-        `Resource not found: ${uri}`
-      );
-    });
+        if (uri.startsWith("exinoicons://docs/platforms/")) {
+          const platform = uri.split("/").pop() as Platform;
+          const usage = PLATFORM_USAGE[platform];
+
+          if (!usage) {
+            throw new McpError(
+              ErrorCode.InvalidRequest,
+              `Platform documentation not found for: ${platform}`,
+            );
+          }
+
+          return {
+            contents: [
+              {
+                uri,
+                mimeType: "text/markdown",
+                text: convertPlatformUsageToMarkdown(usage),
+              },
+            ],
+          };
+        }
+
+        if (uri === "exinoicons://icons/index") {
+          await this.ensureIconsLoaded();
+          return {
+            contents: [
+              {
+                uri,
+                mimeType: "application/json",
+                text: JSON.stringify(this.iconsCache, null, 2),
+              },
+            ],
+          };
+        }
+
+        throw new McpError(
+          ErrorCode.InvalidRequest,
+          `Resource not found: ${uri}`,
+        );
+      },
+    );
   }
 
   /**
@@ -297,10 +326,10 @@ class HugeiconsServer {
         ],
       };
     } catch (error) {
-      if (error && typeof error === 'object' && 'isAxiosError' in error) {
+      if (error && typeof error === "object" && "isAxiosError" in error) {
         throw new McpError(
           ErrorCode.InternalError,
-          `Failed to list icons: ${(error as any).message}`
+          `Failed to list icons: ${(error as any).message}`,
         );
       }
       throw error;
@@ -324,10 +353,10 @@ class HugeiconsServer {
         ],
       };
     } catch (error) {
-      if (error && typeof error === 'object' && 'isAxiosError' in error) {
+      if (error && typeof error === "object" && "isAxiosError" in error) {
         throw new McpError(
           ErrorCode.InternalError,
-          `Failed to search icons: ${(error as any).message}`
+          `Failed to search icons: ${(error as any).message}`,
         );
       }
       throw error;
@@ -345,7 +374,7 @@ class HugeiconsServer {
       if (!usage) {
         throw new McpError(
           ErrorCode.InvalidRequest,
-          `Platform '${platform}' is not supported`
+          `Platform '${platform}' is not supported`,
         );
       }
 
@@ -360,7 +389,7 @@ class HugeiconsServer {
     } catch (error) {
       throw new McpError(
         ErrorCode.InternalError,
-        `Failed to get platform usage: ${error instanceof Error ? error.message : "Unknown error"}`
+        `Failed to get platform usage: ${error instanceof Error ? error.message : "Unknown error"}`,
       );
     }
   }
@@ -384,7 +413,7 @@ class HugeiconsServer {
     } catch (error) {
       throw new McpError(
         ErrorCode.InternalError,
-        `Failed to get icon glyphs: ${error instanceof Error ? error.message : "Unknown error"}`
+        `Failed to get icon glyphs: ${error instanceof Error ? error.message : "Unknown error"}`,
       );
     }
   }
@@ -409,7 +438,7 @@ class HugeiconsServer {
     } catch (error) {
       throw new McpError(
         ErrorCode.InternalError,
-        `Failed to get icon glyph by style: ${error instanceof Error ? error.message : "Unknown error"}`
+        `Failed to get icon glyph by style: ${error instanceof Error ? error.message : "Unknown error"}`,
       );
     }
   }
@@ -421,7 +450,7 @@ class HugeiconsServer {
     if (!args || typeof args.query !== "string" || !args.query.trim()) {
       throw new McpError(
         ErrorCode.InvalidRequest,
-        "Search query must be a non-empty string"
+        "Search query must be a non-empty string",
       );
     }
     return args.query.trim();
@@ -434,7 +463,7 @@ class HugeiconsServer {
     if (!args || typeof args.platform !== "string" || !args.platform.trim()) {
       throw new McpError(
         ErrorCode.InvalidRequest,
-        "Platform must be a non-empty string"
+        "Platform must be a non-empty string",
       );
     }
 
@@ -442,7 +471,7 @@ class HugeiconsServer {
     if (!Object.keys(PLATFORM_USAGE).includes(platform)) {
       throw new McpError(
         ErrorCode.InvalidRequest,
-        `Invalid platform. Supported platforms are: ${Object.keys(PLATFORM_USAGE).join(', ')}`
+        `Invalid platform. Supported platforms are: ${Object.keys(PLATFORM_USAGE).join(", ")}`,
       );
     }
 
@@ -456,7 +485,7 @@ class HugeiconsServer {
     if (!args || typeof args.icon_name !== "string" || !args.icon_name.trim()) {
       throw new McpError(
         ErrorCode.InvalidRequest,
-        "Icon name must be a non-empty string"
+        "Icon name must be a non-empty string",
       );
     }
     return args.icon_name.trim();
@@ -469,28 +498,28 @@ class HugeiconsServer {
     if (!args || typeof args.style !== "string" || !args.style.trim()) {
       throw new McpError(
         ErrorCode.InvalidRequest,
-        "Style must be a non-empty string"
+        "Style must be a non-empty string",
       );
     }
 
     const validStyles: IconStyle[] = [
-      'bulk-rounded',
-      'duotone-rounded',
-      'duotone-standard',
-      'solid-rounded',
-      'solid-sharp',
-      'solid-standard',
-      'stroke-rounded',
-      'stroke-sharp',
-      'stroke-standard',
-      'twotone-rounded'
+      "bulk-rounded",
+      "duotone-rounded",
+      "duotone-standard",
+      "solid-rounded",
+      "solid-sharp",
+      "solid-standard",
+      "stroke-rounded",
+      "stroke-sharp",
+      "stroke-standard",
+      "twotone-rounded",
     ];
 
     const style = args.style.trim() as IconStyle;
     if (!validStyles.includes(style)) {
       throw new McpError(
         ErrorCode.InvalidRequest,
-        `Invalid style. Supported styles are: ${validStyles.join(', ')}`
+        `Invalid style. Supported styles are: ${validStyles.join(", ")}`,
       );
     }
 
@@ -504,13 +533,12 @@ class HugeiconsServer {
     if (this.iconsCache) return;
 
     try {
-      const response = await axios.get<{ icons: IconInfo[] }>("https://hugeicons.com/api/icons");
+      const response = await axios.get<{ icons: IconInfo[] }>(
+        "https://exinoicons.com/api/icons",
+      );
       this.iconsCache = response.data.icons;
     } catch (error) {
-      throw new McpError(
-        ErrorCode.InternalError,
-        "Failed to load icons data"
-      );
+      throw new McpError(ErrorCode.InternalError, "Failed to load icons data");
     }
   }
 
@@ -520,12 +548,12 @@ class HugeiconsServer {
   async run() {
     const transport = new StdioServerTransport();
     await this.server.connect(transport);
-    console.error("hugeicons MCP server running on stdio");
+    console.error("exinoicons MCP server running on stdio");
   }
 }
 
 // Run the server
-const server = new HugeiconsServer();
+const server = new ExinoiconsServer();
 server.run().catch((error) => {
   console.error("Failed to start server:", error);
   process.exit(1);

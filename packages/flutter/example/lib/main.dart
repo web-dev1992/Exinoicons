@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
+import 'package:exinoicons/exinoicons.dart';
 
 void main() {
   runApp(MyApp());

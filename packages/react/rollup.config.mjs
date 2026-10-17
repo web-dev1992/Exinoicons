@@ -1,44 +1,43 @@
-import { defineConfig } from 'rollup';
-import typescript from '@rollup/plugin-typescript';
-import terser from '@rollup/plugin-terser';
-import dts from 'rollup-plugin-dts';
-import nodeResolve from '@rollup/plugin-node-resolve';
-import commonjs from '@rollup/plugin-commonjs';
-import { writeFileSync, mkdirSync } from 'fs';
+import { defineConfig } from "rollup";
+import typescript from "@rollup/plugin-typescript";
+import terser from "@rollup/plugin-terser";
+import dts from "rollup-plugin-dts";
+import nodeResolve from "@rollup/plugin-node-resolve";
+import commonjs from "@rollup/plugin-commonjs";
+import { writeFileSync, mkdirSync } from "fs";
 
 // Plugin to generate package.json with "type": "module" for ESM build
 const generateEsmPackageJson = () => ({
-  name: 'generate-esm-package-json',
+  name: "generate-esm-package-json",
   writeBundle(options) {
-    if (options.dir && options.dir.includes('esm')) {
-      writeFileSync(`${options.dir}/package.json`, JSON.stringify({ type: 'module' }, null, 2));
+    if (options.dir && options.dir.includes("esm")) {
+      writeFileSync(
+        `${options.dir}/package.json`,
+        JSON.stringify({ type: "module" }, null, 2),
+      );
     }
-  }
+  },
 });
 
-const input = 'src/index.ts';
-const external = id => /^react($|\/)/.test(id);
+const input = "src/index.ts";
+const external = (id) => /^react($|\/)/.test(id);
 const globals = {
-  'react': 'React',
-  'react/jsx-runtime': 'jsxRuntime'
+  react: "React",
+  "react/jsx-runtime": "jsxRuntime",
 };
 
 // Shared TypeScript configuration
 const typescriptConfig = {
-  tsconfig: './tsconfig.json',
+  tsconfig: "./tsconfig.json",
   declaration: false,
   sourceMap: true,
   inlineSources: true,
   noEmit: false,
-  exclude: ['**/__tests__/**']
+  exclude: ["**/__tests__/**"],
 };
 
 // Shared plugins for all builds
-const basePlugins = [
-  nodeResolve(),
-  commonjs(),
-  typescript(typescriptConfig)
-];
+const basePlugins = [nodeResolve(), commonjs(), typescript(typescriptConfig)];
 
 // Production optimization plugins
 const prodPlugins = [
@@ -47,9 +46,9 @@ const prodPlugins = [
     compress: {
       drop_console: true,
       drop_debugger: true,
-      pure_getters: true
-    }
-  })
+      pure_getters: true,
+    },
+  }),
 ];
 
 export default defineConfig([
@@ -57,54 +56,54 @@ export default defineConfig([
   {
     input,
     output: {
-      dir: 'dist/esm',
-      format: 'esm',
+      dir: "dist/esm",
+      format: "esm",
       sourcemap: true,
       preserveModules: true,
-      preserveModulesRoot: 'src'
+      preserveModulesRoot: "src",
     },
     external,
-    plugins: [...basePlugins, generateEsmPackageJson()]
+    plugins: [...basePlugins, generateEsmPackageJson()],
   },
 
   // CJS build
   {
     input,
     output: {
-      dir: 'dist/cjs',
-      format: 'cjs',
+      dir: "dist/cjs",
+      format: "cjs",
       sourcemap: true,
       preserveModules: true,
-      preserveModulesRoot: 'src',
-      exports: 'named'
+      preserveModulesRoot: "src",
+      exports: "named",
     },
     external,
-    plugins: basePlugins
+    plugins: basePlugins,
   },
 
   // UMD build (minified)
   {
     input,
     output: {
-      file: 'dist/umd/index.js',
-      format: 'umd',
-      name: 'HugeiconsReact',
+      file: "dist/umd/index.js",
+      format: "umd",
+      name: "ExinoiconsReact",
       globals,
-      sourcemap: true
+      sourcemap: true,
     },
     external,
-    plugins: [...basePlugins, ...prodPlugins]
+    plugins: [...basePlugins, ...prodPlugins],
   },
 
   // Types
   {
     input,
     output: {
-      dir: 'dist/types',
+      dir: "dist/types",
       preserveModules: true,
-      preserveModulesRoot: 'src'
+      preserveModulesRoot: "src",
     },
     external,
-    plugins: [dts()]
-  }
+    plugins: [dts()],
+  },
 ]);

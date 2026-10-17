@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
  *
  * @since 1.0.0
  */
-class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
+class Exinoicons_FAQ_Widget extends \Elementor\Widget_Base
 {
 
     /**
@@ -22,7 +22,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
      */
     public function get_name()
     {
-        return 'hugeicons-faq';
+        return 'exinoicons-faq';
     }
 
     /**
@@ -34,7 +34,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('FAQ', 'hugeicons-pro');
+        return esc_html__('FAQ', 'exinoicons-pro');
     }
 
     /**
@@ -58,7 +58,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
      */
     public function get_custom_help_url()
     {
-        return 'https://hugeicons.com/docs/widgets/faq';
+        return 'https://exinoicons.com/docs/widgets/faq';
     }
 
     /**
@@ -70,7 +70,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
      */
     public function get_categories()
     {
-        return ['hugeicons-icons'];
+        return ['exinoicons-icons'];
     }
 
     /**
@@ -82,7 +82,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
      */
     public function get_keywords()
     {
-        return ['faq', 'accordion', 'hugeicons', 'question', 'answer', 'toggle'];
+        return ['faq', 'accordion', 'exinoicons', 'question', 'answer', 'toggle'];
     }
 
     /**
@@ -94,7 +94,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
      */
     public function get_script_depends()
     {
-        return ['hugeicons-faq-widget'];
+        return ['exinoicons-faq-widget'];
     }
 
     /**
@@ -109,7 +109,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__('FAQ Items', 'hugeicons-pro'),
+                'label' => esc_html__('FAQ Items', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -119,10 +119,10 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $repeater->add_control(
             'question',
             [
-                'label' => esc_html__('Question', 'hugeicons-pro'),
+                'label' => esc_html__('Question', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => esc_html__('What is this FAQ about?', 'hugeicons-pro'),
-                'placeholder' => esc_html__('Enter question', 'hugeicons-pro'),
+                'default' => esc_html__('What is this FAQ about?', 'exinoicons-pro'),
+                'placeholder' => esc_html__('Enter question', 'exinoicons-pro'),
                 'label_block' => true,
             ]
         );
@@ -130,18 +130,18 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $repeater->add_control(
             'answer',
             [
-                'label' => esc_html__('Answer', 'hugeicons-pro'),
+                'label' => esc_html__('Answer', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::WYSIWYG,
-                'default' => esc_html__('This is the answer to the question. You can add any content here including formatting, links, and more.', 'hugeicons-pro'),
-                'placeholder' => esc_html__('Enter answer', 'hugeicons-pro'),
+                'default' => esc_html__('This is the answer to the question. You can add any content here including formatting, links, and more.', 'exinoicons-pro'),
+                'placeholder' => esc_html__('Enter answer', 'exinoicons-pro'),
             ]
         );
 
         $repeater->add_control(
             'item_icon',
             [
-                'label' => esc_html__('Question Icon', 'hugeicons-pro'),
-                'type' => 'hugeicons-icon-browse',
+                'label' => esc_html__('Question Icon', 'exinoicons-pro'),
+                'type' => 'exinoicons-icon-browse',
                 'default' => '',
             ]
         );
@@ -149,21 +149,21 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'faq_items',
             [
-                'label' => esc_html__('FAQ Items', 'hugeicons-pro'),
+                'label' => esc_html__('FAQ Items', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::REPEATER,
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'question' => esc_html__('What is Hugeicons?', 'hugeicons-pro'),
-                        'answer' => esc_html__('Hugeicons is a premium icon library with thousands of beautiful icons in multiple styles.', 'hugeicons-pro'),
+                        'question' => esc_html__('What is Exinoicons?', 'exinoicons-pro'),
+                        'answer' => esc_html__('Exinoicons is a premium icon library with thousands of beautiful icons in multiple styles.', 'exinoicons-pro'),
                     ],
                     [
-                        'question' => esc_html__('How do I use the icons?', 'hugeicons-pro'),
-                        'answer' => esc_html__('Simply drag the icon widgets to your page and click to browse and select your desired icon from our library.', 'hugeicons-pro'),
+                        'question' => esc_html__('How do I use the icons?', 'exinoicons-pro'),
+                        'answer' => esc_html__('Simply drag the icon widgets to your page and click to browse and select your desired icon from our library.', 'exinoicons-pro'),
                     ],
                     [
-                        'question' => esc_html__('Can I customize the icons?', 'hugeicons-pro'),
-                        'answer' => esc_html__('Yes! You can customize the color, size, and other styling options for each icon using the Elementor controls.', 'hugeicons-pro'),
+                        'question' => esc_html__('Can I customize the icons?', 'exinoicons-pro'),
+                        'answer' => esc_html__('Yes! You can customize the color, size, and other styling options for each icon using the Elementor controls.', 'exinoicons-pro'),
                     ],
                 ],
                 'title_field' => '{{{ question }}}',
@@ -176,7 +176,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'settings_section',
             [
-                'label' => esc_html__('Settings', 'hugeicons-pro'),
+                'label' => esc_html__('Settings', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -184,8 +184,8 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'expand_icon',
             [
-                'label' => esc_html__('Expand Icon', 'hugeicons-pro'),
-                'type' => 'hugeicons-icon-browse',
+                'label' => esc_html__('Expand Icon', 'exinoicons-pro'),
+                'type' => 'exinoicons-icon-browse',
                 'default' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M12 4V20M4 12H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>',
@@ -195,8 +195,8 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'collapse_icon',
             [
-                'label' => esc_html__('Collapse Icon', 'hugeicons-pro'),
-                'type' => 'hugeicons-icon-browse',
+                'label' => esc_html__('Collapse Icon', 'exinoicons-pro'),
+                'type' => 'exinoicons-icon-browse',
                 'default' => '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4 12H20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>',
@@ -206,15 +206,15 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'icon_position',
             [
-                'label' => esc_html__('Toggle Icon Position', 'hugeicons-pro'),
+                'label' => esc_html__('Toggle Icon Position', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'hugeicons-pro'),
+                        'title' => esc_html__('Left', 'exinoicons-pro'),
                         'icon' => 'eicon-h-align-left',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'hugeicons-pro'),
+                        'title' => esc_html__('Right', 'exinoicons-pro'),
                         'icon' => 'eicon-h-align-right',
                     ],
                 ],
@@ -226,10 +226,10 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'first_open',
             [
-                'label' => esc_html__('First Item Open', 'hugeicons-pro'),
+                'label' => esc_html__('First Item Open', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hugeicons-pro'),
-                'label_off' => esc_html__('No', 'hugeicons-pro'),
+                'label_on' => esc_html__('Yes', 'exinoicons-pro'),
+                'label_off' => esc_html__('No', 'exinoicons-pro'),
                 'return_value' => 'yes',
                 'default' => 'yes',
             ]
@@ -238,10 +238,10 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'toggle_multiple',
             [
-                'label' => esc_html__('Allow Multiple Open', 'hugeicons-pro'),
+                'label' => esc_html__('Allow Multiple Open', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'label_on' => esc_html__('Yes', 'hugeicons-pro'),
-                'label_off' => esc_html__('No', 'hugeicons-pro'),
+                'label_on' => esc_html__('Yes', 'exinoicons-pro'),
+                'label_off' => esc_html__('No', 'exinoicons-pro'),
                 'return_value' => 'yes',
                 'default' => 'no',
             ]
@@ -253,7 +253,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'style_item_section',
             [
-                'label' => esc_html__('Item', 'hugeicons-pro'),
+                'label' => esc_html__('Item', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -261,7 +261,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'item_spacing',
             [
-                'label' => esc_html__('Space Between', 'hugeicons-pro'),
+                'label' => esc_html__('Space Between', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', 'rem'],
                 'range' => [
@@ -276,7 +276,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
                     'size' => 10,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-widget' => 'gap: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__faq-widget' => 'gap: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -284,11 +284,11 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'item_background',
             [
-                'label' => esc_html__('Background Color', 'hugeicons-pro'),
+                'label' => esc_html__('Background Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#f9fafb',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-item' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__faq-item' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -296,10 +296,10 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'item_background_active',
             [
-                'label' => esc_html__('Active Background Color', 'hugeicons-pro'),
+                'label' => esc_html__('Active Background Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-item.active' => 'background-color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__faq-item.active' => 'background-color: {{VALUE}};',
                 ],
             ]
         );
@@ -307,7 +307,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'item_border_radius',
             [
-                'label' => esc_html__('Border Radius', 'hugeicons-pro'),
+                'label' => esc_html__('Border Radius', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em', 'rem'],
                 'default' => [
@@ -319,7 +319,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
                     'isLinked' => true,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__faq-item' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -328,7 +328,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
             \Elementor\Group_Control_Border::get_type(),
             [
                 'name' => 'item_border',
-                'selector' => '{{WRAPPER}} .hugeicons__faq-item',
+                'selector' => '{{WRAPPER}} .exinoicons__faq-item',
             ]
         );
 
@@ -336,7 +336,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
             \Elementor\Group_Control_Box_Shadow::get_type(),
             [
                 'name' => 'item_box_shadow',
-                'selector' => '{{WRAPPER}} .hugeicons__faq-item',
+                'selector' => '{{WRAPPER}} .exinoicons__faq-item',
             ]
         );
 
@@ -346,7 +346,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'style_question_section',
             [
-                'label' => esc_html__('Question', 'hugeicons-pro'),
+                'label' => esc_html__('Question', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -354,7 +354,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'question_padding',
             [
-                'label' => esc_html__('Padding', 'hugeicons-pro'),
+                'label' => esc_html__('Padding', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em', 'rem'],
                 'default' => [
@@ -366,7 +366,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
                     'isLinked' => false,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-question' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__faq-question' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -374,11 +374,11 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'question_color',
             [
-                'label' => esc_html__('Color', 'hugeicons-pro'),
+                'label' => esc_html__('Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#1f2937',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-question-text' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__faq-question-text' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -386,10 +386,10 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'question_color_active',
             [
-                'label' => esc_html__('Active Color', 'hugeicons-pro'),
+                'label' => esc_html__('Active Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-item.active .hugeicons__faq-question-text' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__faq-item.active .exinoicons__faq-question-text' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -398,7 +398,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'question_typography',
-                'selector' => '{{WRAPPER}} .hugeicons__faq-question-text',
+                'selector' => '{{WRAPPER}} .exinoicons__faq-question-text',
             ]
         );
 
@@ -408,7 +408,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'style_answer_section',
             [
-                'label' => esc_html__('Answer', 'hugeicons-pro'),
+                'label' => esc_html__('Answer', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -416,7 +416,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_responsive_control(
             'answer_padding',
             [
-                'label' => esc_html__('Padding', 'hugeicons-pro'),
+                'label' => esc_html__('Padding', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%', 'em', 'rem'],
                 'default' => [
@@ -428,7 +428,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
                     'isLinked' => false,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-answer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__faq-answer' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
                 ],
             ]
         );
@@ -436,11 +436,11 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'answer_color',
             [
-                'label' => esc_html__('Color', 'hugeicons-pro'),
+                'label' => esc_html__('Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#6b7280',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-answer' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__faq-answer' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -449,7 +449,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
             \Elementor\Group_Control_Typography::get_type(),
             [
                 'name' => 'answer_typography',
-                'selector' => '{{WRAPPER}} .hugeicons__faq-answer',
+                'selector' => '{{WRAPPER}} .exinoicons__faq-answer',
             ]
         );
 
@@ -459,7 +459,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'style_icons_section',
             [
-                'label' => esc_html__('Icons', 'hugeicons-pro'),
+                'label' => esc_html__('Icons', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -467,7 +467,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'heading_question_icon',
             [
-                'label' => esc_html__('Question Icon', 'hugeicons-pro'),
+                'label' => esc_html__('Question Icon', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
             ]
         );
@@ -475,11 +475,11 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'question_icon_color',
             [
-                'label' => esc_html__('Color', 'hugeicons-pro'),
+                'label' => esc_html__('Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#6366f1',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-icon svg' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__faq-icon svg' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -487,7 +487,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'question_icon_size',
             [
-                'label' => esc_html__('Size', 'hugeicons-pro'),
+                'label' => esc_html__('Size', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', 'rem'],
                 'range' => [
@@ -502,7 +502,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
                     'size' => 24,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__faq-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -510,7 +510,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'heading_toggle_icon',
             [
-                'label' => esc_html__('Toggle Icon', 'hugeicons-pro'),
+                'label' => esc_html__('Toggle Icon', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::HEADING,
                 'separator' => 'before',
             ]
@@ -519,11 +519,11 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'toggle_icon_color',
             [
-                'label' => esc_html__('Color', 'hugeicons-pro'),
+                'label' => esc_html__('Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'default' => '#9ca3af',
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-toggle svg' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__faq-toggle svg' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -531,10 +531,10 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'toggle_icon_color_active',
             [
-                'label' => esc_html__('Active Color', 'hugeicons-pro'),
+                'label' => esc_html__('Active Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-item.active .hugeicons__faq-toggle svg' => 'color: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__faq-item.active .exinoicons__faq-toggle svg' => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -542,7 +542,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'toggle_icon_size',
             [
-                'label' => esc_html__('Size', 'hugeicons-pro'),
+                'label' => esc_html__('Size', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', 'em', 'rem'],
                 'range' => [
@@ -557,7 +557,7 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
                     'size' => 20,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__faq-toggle svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__faq-toggle svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -575,38 +575,38 @@ class Hugeicons_FAQ_Widget extends \Elementor\Widget_Base
     {
         $settings = $this->get_settings_for_display();
 
-        $this->add_render_attribute('wrapper', 'class', 'hugeicons__faq-widget');
-        $this->add_render_attribute('wrapper', 'class', 'hugeicons__faq-toggle-' . $settings['icon_position']);
+        $this->add_render_attribute('wrapper', 'class', 'exinoicons__faq-widget');
+        $this->add_render_attribute('wrapper', 'class', 'exinoicons__faq-toggle-' . $settings['icon_position']);
         $this->add_render_attribute('wrapper', 'data-multiple', $settings['toggle_multiple'] === 'yes' ? 'true' : 'false');
         ?>
         <div <?php echo $this->get_render_attribute_string('wrapper'); ?>>
             <?php foreach ($settings['faq_items'] as $index => $item) : ?>
                 <?php
-                $item_class = 'hugeicons__faq-item elementor-repeater-item-' . $item['_id'];
+                $item_class = 'exinoicons__faq-item elementor-repeater-item-' . $item['_id'];
                 if ($settings['first_open'] === 'yes' && $index === 0) {
                     $item_class .= ' active';
                 }
                 ?>
                 <div class="<?php echo esc_attr($item_class); ?>">
-                    <div class="hugeicons__faq-question">
+                    <div class="exinoicons__faq-question">
                         <?php if (!empty($item['item_icon'])) : ?>
-                            <span class="hugeicons__faq-icon">
+                            <span class="exinoicons__faq-icon">
                                 <?php echo $item['item_icon']; ?>
                             </span>
                         <?php endif; ?>
-                        <span class="hugeicons__faq-question-text">
+                        <span class="exinoicons__faq-question-text">
                             <?php echo esc_html($item['question']); ?>
                         </span>
-                        <span class="hugeicons__faq-toggle">
-                            <span class="hugeicons__faq-expand-icon">
+                        <span class="exinoicons__faq-toggle">
+                            <span class="exinoicons__faq-expand-icon">
                                 <?php echo $settings['expand_icon']; ?>
                             </span>
-                            <span class="hugeicons__faq-collapse-icon">
+                            <span class="exinoicons__faq-collapse-icon">
                                 <?php echo $settings['collapse_icon']; ?>
                             </span>
                         </span>
                     </div>
-                    <div class="hugeicons__faq-answer">
+                    <div class="exinoicons__faq-answer">
                         <?php echo wp_kses_post($item['answer']); ?>
                     </div>
                 </div>

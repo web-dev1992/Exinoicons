@@ -1,12 +1,15 @@
-import { ForwardRefExoticComponent, RefAttributes } from 'react';
-import { SvgProps, Svg } from 'react-native-svg';
-import { StyleProp, ViewStyle } from 'react-native';
+import { ForwardRefExoticComponent, RefAttributes } from "react";
+import { SvgProps, Svg } from "react-native-svg";
+import { StyleProp, ViewStyle } from "react-native";
 
-export type IconSvgElement = readonly (readonly [string, {
-  readonly [key: string]: string | number;
-}])[];
+export type IconSvgElement = readonly (readonly [
+  string,
+  {
+    readonly [key: string]: string | number;
+  },
+])[];
 
-export interface HugeiconsProps extends SvgProps {
+export interface ExinoiconsProps extends SvgProps {
   size?: string | number;
   strokeWidth?: number;
   absoluteStrokeWidth?: boolean;
@@ -17,9 +20,11 @@ export interface HugeiconsProps extends SvgProps {
   showAlt?: boolean;
 }
 
-export type HugeiconsIconComponent = ForwardRefExoticComponent<HugeiconsProps & RefAttributes<Svg>>;
+export type ExinoiconsIconComponent = ForwardRefExoticComponent<
+  ExinoiconsProps & RefAttributes<Svg>
+>;
 
-declare module '@hugeicons/react-native' {
-  export const HugeiconsIcon: HugeiconsIconComponent;
-  export type { HugeiconsProps, IconSvgElement, HugeiconsIconComponent };
+declare module "@exinoicons/react-native" {
+  export const ExinoiconsIcon: ExinoiconsIconComponent;
+  export type { ExinoiconsProps, IconSvgElement, ExinoiconsIconComponent };
 }

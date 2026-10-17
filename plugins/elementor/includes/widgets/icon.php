@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
  *
  * @since 1.0.0
  */
-class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
+class Exinoicons_Icon_Widget extends \Elementor\Widget_Base
 {
 
     /**
@@ -24,7 +24,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
      */
     public function get_name()
     {
-        return 'hugeicons-icon';
+        return 'exinoicons-icon';
     }
 
     /**
@@ -38,7 +38,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
      */
     public function get_title()
     {
-        return esc_html__('Icon', 'hugeicons-pro');
+        return esc_html__('Icon', 'exinoicons-pro');
     }
 
     /**
@@ -66,7 +66,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
      */
     public function get_custom_help_url()
     {
-        return 'https://hugeicons.com/docs/widgets/icon';
+        return 'https://exinoicons.com/docs/widgets/icon';
     }
 
     /**
@@ -80,7 +80,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
      */
     public function get_categories()
     {
-        return ['hugeicons-icons'];
+        return ['exinoicons-icons'];
     }
 
     /**
@@ -94,7 +94,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
      */
     public function get_keywords()
     {
-        return ['icon', 'hugeicons', 'image'];
+        return ['icon', 'exinoicons', 'image'];
     }
 
     /**
@@ -111,7 +111,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'content_section',
             [
-                'label' => esc_html__('Icon', 'hugeicons-pro'),
+                'label' => esc_html__('Icon', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -119,8 +119,8 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'icon',
             [
-                'label' => esc_html__('Choose Icon', 'hugeicons-pro'),
-                'type' => 'hugeicons-icon-browse',
+                'label' => esc_html__('Choose Icon', 'exinoicons-pro'),
+                'type' => 'exinoicons-icon-browse',
                 'default' => '<svg width="60" height="60" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M15.0001 17C14.2006 17.6224 13.1504 18 12.0001 18C10.8499 18 9.79965 17.6224 9.00012 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M2.35151 13.2135C1.99849 10.9162 1.82198 9.76763 2.25629 8.74938C2.69059 7.73112 3.65415 7.03443 5.58126 5.64106L7.02111 4.6C9.41841 2.86667 10.6171 2 12.0001 2C13.3832 2 14.5818 2.86667 16.9791 4.6L18.419 5.64106C20.3461 7.03443 21.3097 7.73112 21.744 8.74938C22.1783 9.76763 22.0018 10.9162 21.6487 13.2135L21.3477 15.1724C20.8473 18.4289 20.597 20.0572 19.4291 21.0286C18.2612 22 16.5538 22 13.1389 22H10.8613C7.44646 22 5.73903 22 4.57112 21.0286C3.40321 20.0572 3.15299 18.4289 2.65255 15.1724L2.35151 13.2135Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
@@ -131,7 +131,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'icon_link',
             [
-                'label' => esc_html__('Link', 'hugeicons-pro'),
+                'label' => esc_html__('Link', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::URL,
                 'options' => ['url', 'is_external', 'nofollow'],
                 'default' => [
@@ -146,26 +146,26 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'text_align',
             [
-                'label' => esc_html__('Alignment', 'hugeicons-pro'),
+                'label' => esc_html__('Alignment', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::CHOOSE,
                 'options' => [
                     'left' => [
-                        'title' => esc_html__('Left', 'hugeicons-pro'),
+                        'title' => esc_html__('Left', 'exinoicons-pro'),
                         'icon' => 'eicon-text-align-left',
                     ],
                     'center' => [
-                        'title' => esc_html__('Center', 'hugeicons-pro'),
+                        'title' => esc_html__('Center', 'exinoicons-pro'),
                         'icon' => 'eicon-text-align-center',
                     ],
                     'right' => [
-                        'title' => esc_html__('Right', 'hugeicons-pro'),
+                        'title' => esc_html__('Right', 'exinoicons-pro'),
                         'icon' => 'eicon-text-align-right',
                     ],
                 ],
                 'default' => 'center',
                 'toggle' => true,
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__icon-widget' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .exinoicons__icon-widget' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -176,7 +176,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
         $this->start_controls_section(
             'style_section',
             [
-                'label' => esc_html__('Icon Style', 'hugeicons-pro'),
+                'label' => esc_html__('Icon Style', 'exinoicons-pro'),
                 'tab' => \Elementor\Controls_Manager::TAB_STYLE,
             ]
         );
@@ -184,13 +184,13 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'icon_color',
             [
-                'label' => esc_html__('Color', 'hugeicons-pro'),
+                'label' => esc_html__('Color', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::COLOR,
                 'global' => [
                     'default' => \Elementor\Core\Kits\Documents\Tabs\Global_Colors::COLOR_PRIMARY,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__icon-widget svg' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .exinoicons__icon-widget svg' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -198,7 +198,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
         $this->add_control(
             'width',
             [
-                'label' => esc_html__('Size', 'hugeicons-pro'),
+                'label' => esc_html__('Size', 'exinoicons-pro'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em', 'rem', 'custom'],
                 'range' => [
@@ -217,7 +217,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
                     'size' => 50,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .hugeicons__icon-widget svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .exinoicons__icon-widget svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -240,7 +240,7 @@ class Hugeicons_Icon_Widget extends \Elementor\Widget_Base
             $this->add_link_attributes('icon_link', $settings['icon_link']);
         }
         ?>
-        <div class="hugeicons__icon-widget">
+        <div class="exinoicons__icon-widget">
             <?php if (!empty($settings['icon_link']['url'])) : ?>
             <a <?php echo $this->get_render_attribute_string('icon_link'); ?>>
             <?php endif; ?>

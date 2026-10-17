@@ -10,10 +10,10 @@ importers:
 
   apps/docs:
     dependencies:
-      '@hugeicons/core-free-icons':
+      '@exinoicons/core-free-icons':
         specifier: workspace:*
         version: link:../../packages/core-free-icons
-      '@hugeicons/react':
+      '@exinoicons/react':
         specifier: workspace:*
         version: link:../../packages/react
       react:

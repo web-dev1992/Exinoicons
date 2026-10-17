@@ -1,12 +1,12 @@
 {
-  "name": "@hugeicons/angular",
+  "name": "@exinoicons/angular",
   "version": "1.0.12",
-  "description": "Hugeicons Angular Component Library https://hugeicons.com",
-  "homepage": "https://hugeicons.com",
+  "description": "Exinoicons Angular Component Library https://exinoicons.com",
+  "homepage": "https://exinoicons.com",
   "license": "MIT",
   "type": "module",
-  "main": "./dist/bundles/hugeicons-angular.umd.js",
-  "module": "./dist/fesm2022/hugeicons-angular.mjs",
+  "main": "./dist/bundles/exinoicons-angular.umd.js",
+  "module": "./dist/fesm2022/exinoicons-angular.mjs",
   "typings": "./dist/index.d.ts",
   "sideEffects": false,
   "files": [
@@ -18,13 +18,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugeicons/hugeicons.git",
+    "url": "https://github.com/exinoicons/exinoicons.git",
     "directory": "packages/angular"
   },
   "bugs": {
-    "url": "https://github.com/hugeicons/hugeicons/issues"
+    "url": "https://github.com/exinoicons/exinoicons/issues"
   },
-  "author": "Hugeicons",
+  "author": "Exinoicons",
   "scripts": {
     "build": "pnpm clean && ng-packagr -p ng-package.json",
     "clean": "rm -rf dist",
@@ -49,7 +49,7 @@
     "typescript": "~5.2.0"
   },
   "keywords": [
-    "hugeicons",
+    "exinoicons",
     "angular",
     "icons",
     "angular-icons",

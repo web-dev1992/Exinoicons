@@ -62,7 +62,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.2"
-  hugeicons:
+  exinoicons:
     dependency: "direct main"
     description:
       path: ".."

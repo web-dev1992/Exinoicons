@@ -1,32 +1,32 @@
-import { defineConfig } from 'vite';
-import { svelte, vitePreprocess } from '@sveltejs/vite-plugin-svelte';
-import { resolve } from 'path';
+import { defineConfig } from "vite";
+import { svelte, vitePreprocess } from "@sveltejs/vite-plugin-svelte";
+import { resolve } from "path";
 
 export default defineConfig({
   plugins: [
     svelte({
       preprocess: vitePreprocess(),
       compilerOptions: {
-        dev: false
-      }
-    })
+        dev: false,
+      },
+    }),
   ],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/lib/index.ts'),
-      name: 'HugeiconsIcon',
-      formats: ['es', 'umd'],
-      fileName: (format) => `index.${format}.js`
+      entry: resolve(__dirname, "src/lib/index.ts"),
+      name: "ExinoiconsIcon",
+      formats: ["es", "umd"],
+      fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['svelte'],
+      external: ["svelte"],
       output: {
         globals: {
-          svelte: 'Svelte'
-        }
-      }
+          svelte: "Svelte",
+        },
+      },
     },
     sourcemap: true,
-    emptyOutDir: true
-  }
+    emptyOutDir: true,
+  },
 });

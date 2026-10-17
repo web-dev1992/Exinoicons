@@ -1,21 +1,22 @@
-![Hugeicons Logo](https://raw.githubusercontent.com/hugeicons/hugeicons/main/assets/logo.png)
+![Exinoicons Logo](https://raw.githubusercontent.com/exinoicons/exinoicons/main/assets/logo.png)
 
-# @hugeicons/svelte
+# @exinoicons/svelte
 
-> Hugeicons Svelte rendering library for fast, customizable icons with TypeScript and tree-shaking support
+> Exinoicons Svelte rendering library for fast, customizable icons with TypeScript and tree-shaking support
 
-## What is Hugeicons?
+## What is Exinoicons?
 
-Hugeicons is a large icon set for modern web and mobile apps. The free package includes 6,000+ Stroke Rounded icons. The Pro package provides 60,000+ icons across 10 styles.
+Exinoicons is a large icon set for modern web and mobile apps. The free package includes 6,000+ Stroke Rounded icons. The Pro package provides 60,000+ icons across 10 styles.
 
 ## How It Works
 
-This package (`@hugeicons/svelte`) is a **rendering library** - it provides the `HugeiconsIcon` component that displays icons in your Svelte app. The icons themselves come from separate icon packages:
+This package (`@exinoicons/svelte`) is a **rendering library** - it provides the `ExinoiconsIcon` component that displays icons in your Svelte app. The icons themselves come from separate icon packages:
 
-- **Free icons**: `@hugeicons/core-free-icons` (6,000+ icons)
-- **Pro icons**: `@hugeicons-pro/core-*` packages (60,000+ icons, requires license)
+- **Free icons**: `@exinoicons/core-free-icons` (6,000+ icons)
+- **Pro icons**: `@exinoicons-pro/core-*` packages (60,000+ icons, requires license)
 
 ### Key Highlights
+
 - **6,000+ Free Icons**: Stroke Rounded set for unlimited personal and commercial projects
 - **60,000+ Pro Icons, 10 Styles**: Stroke, Solid, Bulk, Duotone, and Twotone families for sharp, rounded, and standard needs with richer variants
 - **Pixel Perfect Grid**: Built on a 24x24 grid for crisp rendering at any size
@@ -23,13 +24,13 @@ This package (`@hugeicons/svelte`) is a **rendering library** - it provides the 
 - **Tree Shaking Ready**: Named exports keep bundles lean in modern bundlers
 - **Regular Updates**: New icons added regularly to keep up with evolving design trends
 
+> **Looking for Pro Icons?** Check out our docs at [exinoicons.com/docs](https://exinoicons.com/docs) for detailed information about pro icons, styles, and advanced usage.
 
-> **Looking for Pro Icons?** Check out our docs at [hugeicons.com/docs](https://hugeicons.com/docs) for detailed information about pro icons, styles, and advanced usage.
-
-![Hugeicons Icons](https://raw.githubusercontent.com/hugeicons/hugeicons/main/assets/banner.png)
+![Exinoicons Icons](https://raw.githubusercontent.com/exinoicons/exinoicons/main/assets/banner.png)
 
 ## Table of Contents
-- [What is Hugeicons?](#what-is-hugeicons)
+
+- [What is Exinoicons?](#what-is-exinoicons)
 - [How It Works](#how-it-works)
 - [Features](#features)
 - [Installation](#installation)
@@ -60,27 +61,27 @@ This package (`@hugeicons/svelte`) is a **rendering library** - it provides the 
 
 ```bash
 # Using npm
-npm install @hugeicons/svelte @hugeicons/core-free-icons
+npm install @exinoicons/svelte @exinoicons/core-free-icons
 
 # Using yarn
-yarn add @hugeicons/svelte @hugeicons/core-free-icons
+yarn add @exinoicons/svelte @exinoicons/core-free-icons
 
 # Using pnpm
-pnpm add @hugeicons/svelte @hugeicons/core-free-icons
+pnpm add @exinoicons/svelte @exinoicons/core-free-icons
 
 # Using bun
-bun add @hugeicons/svelte @hugeicons/core-free-icons
+bun add @exinoicons/svelte @exinoicons/core-free-icons
 ```
 
 ## Usage
 
 ```svelte
 <script>
-  import { HugeiconsIcon } from '@hugeicons/svelte';
-  import { SearchIcon } from '@hugeicons/core-free-icons';
+  import { ExinoiconsIcon } from '@exinoicons/svelte';
+  import { SearchIcon } from '@exinoicons/core-free-icons';
 </script>
 
-<HugeiconsIcon
+<ExinoiconsIcon
   icon={SearchIcon}
   size={24}
   color="currentColor"
@@ -90,37 +91,39 @@ bun add @hugeicons/svelte @hugeicons/core-free-icons
 
 ## Props
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `icon` | `IconSvgElement` | Required | The main icon to display |
-| `altIcon` | `IconSvgElement` | - | Alternative icon for states, interactions, or dynamic icon swapping |
-| `showAlt` | `boolean` | `false` | When true, displays the altIcon instead of the main icon |
-| `size` | `number \| string` | `24` | Icon size in pixels |
-| `color` | `string` | `currentColor` | Icon color (CSS color value) |
-| `strokeWidth` | `number` | - | Width of the icon strokes |
-| `absoluteStrokeWidth` | `boolean` | `false` | When true, the stroke width will be scaled relative to the icon size |
-| `className` | `string` | - | Additional CSS classes |
+| Prop                  | Type               | Default        | Description                                                          |
+| --------------------- | ------------------ | -------------- | -------------------------------------------------------------------- |
+| `icon`                | `IconSvgElement`   | Required       | The main icon to display                                             |
+| `altIcon`             | `IconSvgElement`   | -              | Alternative icon for states, interactions, or dynamic icon swapping  |
+| `showAlt`             | `boolean`          | `false`        | When true, displays the altIcon instead of the main icon             |
+| `size`                | `number \| string` | `24`           | Icon size in pixels                                                  |
+| `color`               | `string`           | `currentColor` | Icon color (CSS color value)                                         |
+| `strokeWidth`         | `number`           | -              | Width of the icon strokes                                            |
+| `absoluteStrokeWidth` | `boolean`          | `false`        | When true, the stroke width will be scaled relative to the icon size |
+| `className`           | `string`           | -              | Additional CSS classes                                               |
 
 ## Examples
 
 ### Basic Usage
+
 ```svelte
 <script>
-  import { HugeiconsIcon } from '@hugeicons/svelte';
-  import { Video01Icon } from '@hugeicons/core-free-icons';
+  import { ExinoiconsIcon } from '@exinoicons/svelte';
+  import { Video01Icon } from '@exinoicons/core-free-icons';
 </script>
 
-<HugeiconsIcon icon={Video01Icon} />
+<ExinoiconsIcon icon={Video01Icon} />
 ```
 
 ### Custom Size and Color
+
 ```svelte
 <script>
-  import { HugeiconsIcon } from '@hugeicons/svelte';
-  import { NotificationIcon } from '@hugeicons/core-free-icons';
+  import { ExinoiconsIcon } from '@exinoicons/svelte';
+  import { NotificationIcon } from '@exinoicons/core-free-icons';
 </script>
 
-<HugeiconsIcon
+<ExinoiconsIcon
   icon={NotificationIcon}
   size={32}
   color="#FF5733"
@@ -129,8 +132,8 @@ bun add @hugeicons/svelte @hugeicons/core-free-icons
 
 ### More examples and patterns
 
-- Examples: https://hugeicons.com/docs/integrations/svelte/examples
-- Best practices: https://hugeicons.com/docs/integrations/svelte/best-practices
+- Examples: https://exinoicons.com/docs/integrations/svelte/examples
+- Best practices: https://exinoicons.com/docs/integrations/svelte/best-practices
 
 ## Performance
 
@@ -143,7 +146,7 @@ bun add @hugeicons/svelte @hugeicons/core-free-icons
 ### Common Issues
 
 1. **Icons not showing up?**
-   - Make sure you've installed both `@hugeicons/svelte` and `@hugeicons/core-free-icons`
+   - Make sure you've installed both `@exinoicons/svelte` and `@exinoicons/core-free-icons`
    - Check that the icon names are correctly imported
 
 2. **TypeScript errors?**
@@ -160,44 +163,45 @@ The library supports all modern browsers.
 
 ## Related Packages
 
-- [@hugeicons/react](https://www.npmjs.com/package/@hugeicons/react) - React component
-- [@hugeicons/vue](https://www.npmjs.com/package/@hugeicons/vue) - Vue component
-- [@hugeicons/angular](https://www.npmjs.com/package/@hugeicons/angular) - Angular component
-- [@hugeicons/react-native](https://www.npmjs.com/package/@hugeicons/react-native) - React Native component
+- [@exinoicons/react](https://www.npmjs.com/package/@exinoicons/react) - React component
+- [@exinoicons/vue](https://www.npmjs.com/package/@exinoicons/vue) - Vue component
+- [@exinoicons/angular](https://www.npmjs.com/package/@exinoicons/angular) - Angular component
+- [@exinoicons/react-native](https://www.npmjs.com/package/@exinoicons/react-native) - React Native component
 
 ## Pro Version
 
 > **Want access to 60,000+ icons and 10 unique styles?**
-> Check out our [Pro Version](https://hugeicons.com/pricing) and visit our [docs](https://hugeicons.com/docs) for detailed documentation.
+> Check out our [Pro Version](https://exinoicons.com/pricing) and visit our [docs](https://exinoicons.com/docs) for detailed documentation.
 
 ### Available Pro Styles
+
 - **Stroke Styles**
-  - Stroke Rounded (`@hugeicons-pro/core-stroke-rounded`)
-  - Stroke Sharp (`@hugeicons-pro/core-stroke-sharp`)
-  - Stroke Standard (`@hugeicons-pro/core-stroke-standard`)
+  - Stroke Rounded (`@exinoicons-pro/core-stroke-rounded`)
+  - Stroke Sharp (`@exinoicons-pro/core-stroke-sharp`)
+  - Stroke Standard (`@exinoicons-pro/core-stroke-standard`)
 - **Solid Styles**
-  - Solid Rounded (`@hugeicons-pro/core-solid-rounded`)
-  - Solid Sharp (`@hugeicons-pro/core-solid-sharp`)
-  - Solid Standard (`@hugeicons-pro/core-solid-standard`)
+  - Solid Rounded (`@exinoicons-pro/core-solid-rounded`)
+  - Solid Sharp (`@exinoicons-pro/core-solid-sharp`)
+  - Solid Standard (`@exinoicons-pro/core-solid-standard`)
 - **Special Styles**
-  - Bulk Rounded (`@hugeicons-pro/core-bulk-rounded`)
-  - Duotone Rounded (`@hugeicons-pro/core-duotone-rounded`)
-  - Duotone Standard (`@hugeicons-pro/core-duotone-standard`)
-  - Twotone Rounded (`@hugeicons-pro/core-twotone-rounded`)
+  - Bulk Rounded (`@exinoicons-pro/core-bulk-rounded`)
+  - Duotone Rounded (`@exinoicons-pro/core-duotone-rounded`)
+  - Duotone Standard (`@exinoicons-pro/core-duotone-standard`)
+  - Twotone Rounded (`@exinoicons-pro/core-twotone-rounded`)
 
 ## License
 
-The code in this package (`@hugeicons/svelte`) is licensed under the MIT License.
+The code in this package (`@exinoicons/svelte`) is licensed under the MIT License.
 
-This package only provides rendering utilities. It does not include or grant any rights to Hugeicons icon assets. Using Pro icon styles requires a valid Hugeicons Pro license.
+This package only provides rendering utilities. It does not include or grant any rights to Exinoicons icon assets. Using Pro icon styles requires a valid Exinoicons Pro license.
 
-Hugeicons icon packs are licensed separately:
-- **Free icon packs** (`@hugeicons/core-free-icons`): MIT License. The `LICENSE.md` ships in the package.
-- **Pro icon packs (`@hugeicons-pro/*`)**: require a paid Hugeicons Pro license and are governed by the [Hugeicons License Agreement](https://hugeicons.com/license-agreement) (summary in the package's `PRO-LICENSE.md`).
+Exinoicons icon packs are licensed separately:
 
+- **Free icon packs** (`@exinoicons/core-free-icons`): MIT License. The `LICENSE.md` ships in the package.
+- **Pro icon packs (`@exinoicons-pro/*`)**: require a paid Exinoicons Pro license and are governed by the [Exinoicons License Agreement](https://exinoicons.com/license-agreement) (summary in the package's `PRO-LICENSE.md`).
 
 ## Related
 
 - [Changelog](CHANGELOG.md) - Version history and release notes
-- [@hugeicons/core-free-icons](https://www.npmjs.com/package/@hugeicons/core-free-icons) - Free icon package
-- [Hugeicons Website](https://hugeicons.com) - Browse all available icons
+- [@exinoicons/core-free-icons](https://www.npmjs.com/package/@exinoicons/core-free-icons) - Free icon package
+- [Exinoicons Website](https://exinoicons.com) - Browse all available icons

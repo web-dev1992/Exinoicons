@@ -1,5 +1,5 @@
-import type { IconSvgElement } from '@hugeicons/react';
-import * as coreFreeIcons from '@hugeicons/core-free-icons';
+import type { IconSvgElement } from "@exinoicons/react";
+import * as coreFreeIcons from "@exinoicons/core-free-icons";
 import {
   ALL_CATEGORY,
   categorizeIconName,
@@ -7,9 +7,9 @@ import {
   type CategoryFilter,
   type IconCategory,
   type LetterFilter,
-} from './categories';
+} from "./categories";
 
-export const CORE_FREE_ICONS_PACKAGE = '@hugeicons/core-free-icons' as const;
+export const CORE_FREE_ICONS_PACKAGE = "@exinoicons/core-free-icons" as const;
 
 export type IconPackageName = typeof CORE_FREE_ICONS_PACKAGE;
 
@@ -34,7 +34,7 @@ function isIconSvgObject(value: unknown): value is IconSvgElement {
   }
 
   const first = value[0];
-  return Array.isArray(first) && typeof first[0] === 'string';
+  return Array.isArray(first) && typeof first[0] === "string";
 }
 
 function isIconExportName(name: string): boolean {
@@ -59,7 +59,10 @@ function pickCanonicalName(names: string[]): string {
   })[0];
 }
 
-function buildImportStatement(name: string, packageName: IconPackageName): string {
+function buildImportStatement(
+  name: string,
+  packageName: IconPackageName,
+): string {
   return `import { ${name} } from "${packageName}";`;
 }
 
@@ -132,12 +135,14 @@ export function getLetterCounts(
   }
 
   const letters: LetterFilter[] = [
-    ...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('') as Array<Exclude<LetterFilter, 'All' | '#'>>,
-    '#',
+    ...("ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("") as Array<
+      Exclude<LetterFilter, "All" | "#">
+    >),
+    "#",
   ];
 
   return [
-    { letter: 'All', count: icons.length },
+    { letter: "All", count: icons.length },
     ...letters
       .filter((letter) => (counts.get(letter) ?? 0) > 0)
       .map((letter) => ({ letter, count: counts.get(letter) ?? 0 })),
@@ -155,7 +160,7 @@ export function filterIcons(
       return false;
     }
 
-    if (letter !== 'All' && entry.letter !== letter) {
+    if (letter !== "All" && entry.letter !== letter) {
       return false;
     }
 

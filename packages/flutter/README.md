@@ -1,21 +1,19 @@
-![31c9262e-aeea-4403-9086-3c8b88885cab](https://raw.githubusercontent.com/hugeicons/hugeicons/main/assets/logo.png)
+![31c9262e-aeea-4403-9086-3c8b88885cab](https://raw.githubusercontent.com/exinoicons/exinoicons/main/assets/logo.png)
 
+# Free Flutter Icons - Exinoicons
 
-# Free Flutter Icons - Hugeicons
+Welcome to Exinoicons Flutter Icons, your premier destination for free Flutter icons. Our expansive collection features over 6,000+ stroke-rounded SVG icons, available at no charge and crafted to meet a diverse array of design requirements. These icons are perfect for devs and designers seeking top-quality, customizable options for enhancing their digital product.
 
-Welcome to Hugeicons Flutter Icons, your premier destination for free Flutter icons. Our expansive collection features over 6,000+ stroke-rounded SVG icons, available at no charge and crafted to meet a diverse array of design requirements. These icons are perfect for devs and designers seeking top-quality, customizable options for enhancing their digital product.
+What sets Exinoicons apart is the careful attention to detail—each icon is crafted to be incredibly beautiful and consistent, ensuring that your designs look user-friendly and professional.
 
-What sets Hugeicons apart is the careful attention to detail—each icon is crafted to be incredibly beautiful and consistent, ensuring that your designs look user-friendly and professional.
+Trusted by over 150,000 creatives worldwide, Exinoicons makes it easy to add a wide range of beautiful icons to your Flutter projects without any hassle.
 
-Trusted by over 150,000 creatives worldwide, Hugeicons makes it easy to add a wide range of beautiful icons to your Flutter projects without any hassle.
+You can preview out our full collection of icons on the [Exinoicons website](https://exinoicons.com/icons).
 
-You can preview out our full collection of icons on the [Hugeicons website](https://hugeicons.com/icons).
-
-
-![a40aa766-1b04-4a2a-a2e6-0ec3c492b96a](https://raw.githubusercontent.com/hugeicons/hugeicons/main/assets/banner.png)
-
+![a40aa766-1b04-4a2a-a2e6-0ec3c492b96a](https://raw.githubusercontent.com/exinoicons/exinoicons/main/assets/banner.png)
 
 ## Table of Contents
+
 - [Features](#features)
 - [Installation](#installation)
 - [Usage Examples](#usage-examples)
@@ -33,11 +31,11 @@ You can preview out our full collection of icons on the [Hugeicons website](http
 
 ## Installation
 
-To install and start using Hugeicons Flutter Icons in your project, follow the steps below:
+To install and start using Exinoicons Flutter Icons in your project, follow the steps below:
 
 ```dart
 dependencies:
-  hugeicons: ^1.0.0
+  exinoicons: ^1.0.0
 ```
 
 Then run:
@@ -48,12 +46,12 @@ $ flutter pub get
 
 ## Usage Examples
 
-To use Hugeicons Flutter Icons in your project, import the package and call the desired icon using the `HugeIcon` widget. You can customize the icon size, color, stroke width, and other properties as needed.
+To use Exinoicons Flutter Icons in your project, import the package and call the desired icon using the `HugeIcon` widget. You can customize the icon size, color, stroke width, and other properties as needed.
 
 ### Basic Usage
 
 ```dart
-import 'package:hugeicons/hugeicons.dart';
+import 'package:exinoicons/exinoicons.dart';
 
 HugeIcon(
   icon: HugeIcons.strokeRoundedHome01,
@@ -78,6 +76,7 @@ HugeIcon(
 All icons follow the naming pattern: `HugeIcons.strokeRounded[IconName]`
 
 Examples:
+
 - `HugeIcons.strokeRoundedHome01`
 - `HugeIcons.strokeRoundedAirplaneSeat`
 - `HugeIcons.strokeRoundedUser`
@@ -85,14 +84,14 @@ Examples:
 
 ## Contributing
 
-We welcome contributions from the community to help improve Hugeicons Flutter Icons. If you have any suggestions, feedback, or ideas for new icons, please feel free to submit a pull request or open an issue on our GitHub repository.
+We welcome contributions from the community to help improve Exinoicons Flutter Icons. If you have any suggestions, feedback, or ideas for new icons, please feel free to submit a pull request or open an issue on our GitHub repository.
 
 ## License
 
-Hugeicons Flutter Icons is licensed under the MIT License. You are free to use, modify, and distribute the icons for personal and commercial projects. We appreciate attribution to Hugeicons when using our icons in your projects.
+Exinoicons Flutter Icons is licensed under the MIT License. You are free to use, modify, and distribute the icons for personal and commercial projects. We appreciate attribution to Exinoicons when using our icons in your projects.
 
 ## License
 
-Hugeicons Flutter Icons is licensed under the MIT License. This permits use, modification, distribution, and private or commercial use of the flutter icons, provided only the icons that the original copyright and permission notice are included in all copies or substantial portions of the software.
+Exinoicons Flutter Icons is licensed under the MIT License. This permits use, modification, distribution, and private or commercial use of the flutter icons, provided only the icons that the original copyright and permission notice are included in all copies or substantial portions of the software.
 
 For more details, see the [LICENSE](./LICENSE) file in the repository.

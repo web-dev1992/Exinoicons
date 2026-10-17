@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hugeicons/hugeicons.dart';
-import 'package:hugeicons/styles/stroke_rounded.dart';
+import 'package:exinoicons/exinoicons.dart';
+import 'package:exinoicons/styles/stroke_rounded.dart';
 
 void main() {
   group('HugeIcons', () {
