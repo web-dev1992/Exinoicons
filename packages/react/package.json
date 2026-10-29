@@ -1,6 +1,6 @@
 {
   "name": "@exinoicons/react",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "Tree-shakeable React icon components for Exinoicons",
   "license": "MIT",
   "type": "module",
@@ -40,8 +40,8 @@
     "clean": "rimraf dist",
     "build:bundles": "rollup -c ./rollup.config.mjs",
     "pack:check": "npm pack --dry-run",
-    "publish:beta": "pnpm build && npm publish --tag beta --no-git-checks",
-    "publish:prod": "pnpm build && npm publish --no-git-checks",
+    "publish:beta": "pnpm build && pnpm publish --tag beta --no-git-checks",
+    "publish:prod": "pnpm build && pnpm publish --no-git-checks",
     "build:types": "rollup -c ./rollup.types.config.mjs",
     "build": "pnpm clean && pnpm generate && pnpm build:types && pnpm build:bundles"
   },
