@@ -1,0 +1,6 @@
+// AUTO-GENERATED. DO NOT EDIT.
+
+import { Chart01FreeIcons as iconData } from '@exinoicons/core-free-icons';
+import { createIconComponent } from '../createIconComponent';
+
+export const Chart01FreeIcons = createIconComponent(iconData);

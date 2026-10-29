@@ -1,0 +1,6 @@
+// AUTO-GENERATED. DO NOT EDIT.
+
+import { SwipeRight06Icon as iconData } from '@exinoicons/core-free-icons';
+import { createIconComponent } from '../createIconComponent';
+
+export const SwipeRight06Icon = createIconComponent(iconData);

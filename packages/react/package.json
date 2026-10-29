@@ -1,70 +1,58 @@
 {
   "name": "@exinoicons/react",
-  "version": "1.1.9",
-  "description": "Exinoicons React Component Library https://exinoicons.com",
-  "homepage": "https://exinoicons.com",
+  "version": "2.0.0",
+  "description": "Tree-shakeable React icon components for Exinoicons",
   "license": "MIT",
-  "amdName": "exinoicons-pro-react",
-  "main": "./dist/cjs/index.js",
-  "main:umd": "./dist/umd/index.js",
+  "type": "module",
+  "main": "./dist/cjs/index.cjs",
   "module": "./dist/esm/index.js",
-  "unpkg": "./dist/umd/index.js",
   "types": "./dist/types/index.d.ts",
   "sideEffects": false,
   "files": [
-    "dist",
+    "dist/esm",
+    "dist/cjs",
+    "dist/types",
     "CHANGELOG.md",
     "LICENSE.md",
     "PRO-LICENSE.md",
     "README.md"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/exinoicons/exinoicons.git",
     "directory": "packages/react"
   },
-  "bugs": {
-    "url": "https://github.com/exinoicons/exinoicons/issues"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
-    }
-  },
-  "author": "Exinoicons",
-  "scripts": {
-    "build": "pnpm clean && pnpm typecheck && pnpm build:bundles",
-    "build:bundles": "rollup -c ./rollup.config.mjs",
-    "typecheck": "tsc",
-    "clean": "rimraf dist",
-    "publish:beta": "pnpm build && npm publish --tag beta --no-git-checks",
-    "publish:prod": "pnpm build && npm publish --no-git-checks"
-  },
-  "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.0",
-    "@rollup/plugin-node-resolve": "^15.0.0",
-    "@rollup/plugin-terser": "^0.4.0",
-    "@rollup/plugin-typescript": "^11.0.0",
-    "@types/react": "^18.0.0",
-    "rollup": "^3.0.0",
-    "rollup-plugin-dts": "^5.0.0",
-    "tslib": "^2.6.0",
-    "typescript": "^5.0.0"
+  "dependencies": {
+    "@exinoicons/core-free-icons": "workspace:*"
   },
   "peerDependencies": {
     "react": ">=16.0.0"
   },
-  "keywords": [
-    "exinoicons",
-    "react",
-    "icons",
-    "react-icons",
-    "svg-icons",
-    "svg",
-    "vector-icons",
-    "icon-library",
-    "typescript"
-  ]
+  "scripts": {
+    "generate": "node ./scripts/generate-icon-components.mjs",
+    "clean": "rimraf dist",
+    "build:bundles": "rollup -c ./rollup.config.mjs",
+    "pack:check": "npm pack --dry-run",
+    "publish:beta": "pnpm build && npm publish --tag beta --no-git-checks",
+    "publish:prod": "pnpm build && npm publish --no-git-checks",
+    "build:types": "rollup -c ./rollup.types.config.mjs",
+    "build": "pnpm clean && pnpm generate && pnpm build:types && pnpm build:bundles"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^1.0.2",
+    "@rollup/plugin-typescript": "^12.3.1",
+    "@types/react": "^19.3.0",
+    "rollup": "^4.66.0",
+    "rollup-plugin-dts": "^6.5.1",
+    "typescript": "^5.7.3"
+  }
 }

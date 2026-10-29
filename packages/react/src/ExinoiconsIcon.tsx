@@ -1,9 +1,10 @@
+
 import {
   createElement,
   forwardRef,
-  ForwardRefExoticComponent,
-  RefAttributes,
-  SVGProps,
+  type ForwardRefExoticComponent,
+  type RefAttributes,
+  type SVGProps,
 } from "react";
 
 const defaultAttributes = {
@@ -14,13 +15,17 @@ const defaultAttributes = {
   fill: "none",
 };
 
-export type IconSvgElement = readonly (readonly [
-  string,
-  { readonly [key: string]: string | number },
-])[];
+export type IconSvgElement = readonly (
+  readonly [
+    string,
+    { readonly [key: string]: string | number },
+  ]
+)[];
 
-export type SVGAttributes = Partial<SVGProps<SVGSVGElement>>;
-type ComponentAttributes = RefAttributes<SVGSVGElement> & SVGAttributes;
+export type SVGAttributes = SVGProps<SVGSVGElement>;
+
+type ComponentAttributes = SVGAttributes &
+  RefAttributes<SVGSVGElement>;
 
 export interface ExinoiconsProps extends ComponentAttributes {
   size?: string | number;
@@ -34,17 +39,20 @@ export interface ExinoiconsProps extends ComponentAttributes {
   disableSecondaryOpacity?: boolean;
 }
 
-export interface ExinoiconsIconProps extends Omit<
-  ExinoiconsProps,
-  "ref" | "altIcon"
-> {
+export interface ExinoiconsIconProps
+  extends Omit<ExinoiconsProps, "ref" | "altIcon"> {
   icon: IconSvgElement;
   altIcon?: IconSvgElement;
 }
 
-export type ExinoiconsIcon = ForwardRefExoticComponent<ExinoiconsProps>;
+export type ExinoiconsIcon = ForwardRefExoticComponent<
+  ExinoiconsIconProps & RefAttributes<SVGSVGElement>
+>;
 
-export const ExinoiconsIcon = forwardRef<SVGSVGElement, ExinoiconsIconProps>(
+export const ExinoiconsIcon = forwardRef<
+  SVGSVGElement,
+  ExinoiconsIconProps
+>(
   (
     {
       color = "currentColor",
@@ -69,7 +77,10 @@ export const ExinoiconsIcon = forwardRef<SVGSVGElement, ExinoiconsIconProps>(
           : strokeWidth
         : undefined;
 
-    const strokeProps: { stroke?: string; strokeWidth?: number } =
+    const strokeProps: {
+      stroke?: string;
+      strokeWidth?: number;
+    } =
       calculatedStrokeWidth !== undefined
         ? {
             strokeWidth: calculatedStrokeWidth,
@@ -90,21 +101,21 @@ export const ExinoiconsIcon = forwardRef<SVGSVGElement, ExinoiconsIconProps>(
 
     const currentIcon = showAlt && altIcon ? altIcon : icon;
 
-    // Create SVG children with color handling for two-tone icons
     const svgChildren = [...currentIcon]
       .sort(([, a], [, b]) => {
         const hasOpacityA = a.opacity !== undefined;
         const hasOpacityB = b.opacity !== undefined;
+
         return hasOpacityB ? 1 : hasOpacityA ? -1 : 0;
       })
-      .map(([tag, attrs]) => {
+      .map(([tag, attrs], index) => {
         const isSecondaryPath = attrs.opacity !== undefined;
+
         const pathOpacity =
           isSecondaryPath && !disableSecondaryOpacity
             ? attrs.opacity
             : undefined;
 
-        // Handle both stroke and fill properties based on element type
         const fillProps = secondaryColor
           ? {
               ...(attrs.stroke !== undefined
@@ -126,7 +137,7 @@ export const ExinoiconsIcon = forwardRef<SVGSVGElement, ExinoiconsIconProps>(
           ...strokeProps,
           ...fillProps,
           opacity: pathOpacity,
-          key: attrs.key,
+          key: attrs.key ?? index,
         });
       });
 

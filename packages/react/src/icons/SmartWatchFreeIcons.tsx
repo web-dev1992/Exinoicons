@@ -1,0 +1,6 @@
+// AUTO-GENERATED. DO NOT EDIT.
+
+import { SmartWatchFreeIcons as iconData } from '@exinoicons/core-free-icons';
+import { createIconComponent } from '../createIconComponent';
+
+export const SmartWatchFreeIcons = createIconComponent(iconData);

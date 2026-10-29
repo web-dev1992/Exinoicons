@@ -1,3 +1,4 @@
+export * from './icons';
 export { default as ExinoiconsIcon } from "./ExinoiconsIcon";
 export type {
   ExinoiconsIconProps,

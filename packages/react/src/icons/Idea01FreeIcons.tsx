@@ -1,0 +1,6 @@
+// AUTO-GENERATED. DO NOT EDIT.
+
+import { Idea01FreeIcons as iconData } from '@exinoicons/core-free-icons';
+import { createIconComponent } from '../createIconComponent';
+
+export const Idea01FreeIcons = createIconComponent(iconData);

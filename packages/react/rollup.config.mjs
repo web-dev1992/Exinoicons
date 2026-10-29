@@ -1,48 +1,66 @@
-import { defineConfig } from "rollup";
-import typescript from "@rollup/plugin-typescript";
-import terser from "@rollup/plugin-terser";
-import dts from "rollup-plugin-dts";
-import nodeResolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import { writeFileSync, mkdirSync } from "fs";
 
-// Plugin to generate package.json with "type": "module" for ESM build
-const generateEsmPackageJson = () => ({
-  name: "generate-esm-package-json",
-  writeBundle(options) {
-    if (options.dir && options.dir.includes("esm")) {
+import { defineConfig } from 'rollup';
+import typescript from '@rollup/plugin-typescript';
+import terser from '@rollup/plugin-terser';
+import nodeResolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import { writeFileSync, mkdirSync } from 'node:fs';
+import path from 'node:path';
+
+const input = 'src/index.ts';
+
+const isReact = (id) =>
+  id === 'react' || id.startsWith('react/');
+
+const isCoreIcons = (id) =>
+  id === '@exinoicons/core-free-icons' ||
+  id.startsWith('@exinoicons/core-free-icons/');
+
+const externalEsmCjs = (id) =>
+  isReact(id) || isCoreIcons(id);
+
+const basePlugins = [
+  nodeResolve({
+    extensions: ['.mjs', '.js', '.json', '.ts', '.tsx'],
+  }),
+  commonjs(),
+  typescript({
+    tsconfig: './tsconfig.json',
+    declaration: false,
+    sourceMap: false,
+    noEmit: false,
+    exclude: [
+      '**/__tests__/**',
+      '**/*.test.ts',
+      '**/*.test.tsx',
+      '**/*.spec.ts',
+      '**/*.spec.tsx',
+    ],
+  }),
+];
+
+/**
+ * Creates package.json files inside output directories so Node
+ * interprets ESM and CommonJS files with the correct module format.
+ */
+function writeModulePackageJson({ directory, type }) {
+  return {
+    name: `write-${type}-package-json`,
+    generateBundle() {
+      mkdirSync(directory, { recursive: true });
       writeFileSync(
-        `${options.dir}/package.json`,
-        JSON.stringify({ type: "module" }, null, 2),
+        path.join(directory, 'package.json'),
+        JSON.stringify({ type }, null, 2) + '\n',
       );
-    }
-  },
-});
+    },
+  };
+}
 
-const input = "src/index.ts";
-const external = (id) => /^react($|\/)/.test(id);
-const globals = {
-  react: "React",
-  "react/jsx-runtime": "jsxRuntime",
-};
-
-// Shared TypeScript configuration
-const typescriptConfig = {
-  tsconfig: "./tsconfig.json",
-  declaration: false,
-  sourceMap: true,
-  inlineSources: true,
-  noEmit: false,
-  exclude: ["**/__tests__/**"],
-};
-
-// Shared plugins for all builds
-const basePlugins = [nodeResolve(), commonjs(), typescript(typescriptConfig)];
-
-// Production optimization plugins
 const prodPlugins = [
   terser({
-    output: { comments: false },
+    format: {
+      comments: false,
+    },
     compress: {
       drop_console: true,
       drop_debugger: true,
@@ -52,58 +70,73 @@ const prodPlugins = [
 ];
 
 export default defineConfig([
-  // ESM build
+  // ESM: preserves individual modules for tree shaking.
   {
     input,
     output: {
-      dir: "dist/esm",
-      format: "esm",
-      sourcemap: true,
+      dir: 'dist/esm',
+      format: 'esm',
       preserveModules: true,
-      preserveModulesRoot: "src",
+      preserveModulesRoot: 'src',
+      entryFileNames: '[name].js',
+      chunkFileNames: 'chunks/[name]-[hash].js',
     },
-    external,
-    plugins: [...basePlugins, generateEsmPackageJson()],
+    external: externalEsmCjs,
+    plugins: [
+      ...basePlugins,
+      writeModulePackageJson({
+        directory: path.resolve('dist/esm'),
+        type: 'module',
+      }),
+    ],
   },
 
-  // CJS build
+  // CommonJS: a single compatibility entry.
   {
     input,
     output: {
-      dir: "dist/cjs",
-      format: "cjs",
-      sourcemap: true,
-      preserveModules: true,
-      preserveModulesRoot: "src",
-      exports: "named",
+      file: 'dist/cjs/index.cjs',
+      format: 'cjs',
+      exports: 'named',
+      interop: 'auto',
     },
-    external,
+    external: externalEsmCjs,
     plugins: basePlugins,
   },
 
-  // UMD build (minified)
+  // UMD: standalone browser build. React is provided by the host page.
   {
     input,
     output: {
-      file: "dist/umd/index.js",
-      format: "umd",
-      name: "ExinoiconsReact",
-      globals,
-      sourcemap: true,
+      file: 'dist/umd/index.js',
+      format: 'umd',
+      name: 'ExinoiconsReact',
+      exports: 'named',
+      globals: {
+        react: 'React',
+        'react/jsx-runtime': 'jsxRuntime',
+      },
     },
-    external,
-    plugins: [...basePlugins, ...prodPlugins],
-  },
-
-  // Types
-  {
-    input,
-    output: {
-      dir: "dist/types",
-      preserveModules: true,
-      preserveModulesRoot: "src",
-    },
-    external,
-    plugins: [dts()],
+    external: isReact,
+    plugins: [
+      nodeResolve({
+        extensions: ['.mjs', '.js', '.json', '.ts', '.tsx'],
+      }),
+      commonjs(),
+      typescript({
+        tsconfig: './tsconfig.json',
+        declaration: false,
+        sourceMap: false,
+        noEmit: false,
+        exclude: [
+          '**/__tests__/**',
+          '**/*.test.ts',
+          '**/*.test.tsx',
+          '**/*.spec.ts',
+          '**/*.spec.tsx',
+        ],
+      }),
+      ...prodPlugins,
+    ],
   },
 ]);
